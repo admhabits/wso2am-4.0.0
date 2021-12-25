@@ -180,16 +180,17 @@ RUN \
     && cd ${WSO2_SERVER_HOME} \
     && echo "\n\ Masuk direktori git clone : $ cd ${WSO2_SERVER_HOME}" \
     && ls -l && echo "\n"\
-    \
-    && echo "\n\ ===== SETUP GLOBAL GIT =====" \
-    && git config --global user.email ${MY_EMAIL_GIT} \
-    && git config --global user.user ${USER} \
+    # \
+    # && echo "\n\ ===== SETUP GLOBAL GIT =====" \
+    # && git config --global user.email ${MY_EMAIL_GIT} \
+    # && git config --global user.user ${USER} \
     \
     && git init \
     && git remote add origin ${WSO2_GITHUB_REMOTE_LINK} \
+    && echo "\n\ git remote add origin ${WSO2_GITHUB_REMOTE_LINK} " \
     && git add . && git commit -m "setup server branch" && git branch -M ${REMOTE_BRANCH} \
-    # && git push origin server \
-    # && git checkout ${REMOTE_BRANCH} \
+    && git push origin server \
+    && git checkout ${REMOTE_BRANCH} \
     \
     && echo "\n\ Pindah branch repository ${REMOTE_BRANCH} : $ git checkout ${REMOTE_BRANCH}" \
     && ls && echo "\n"\
@@ -202,7 +203,7 @@ RUN \
     && echo "\n\ ===== Buat Branch Baru =====" \
     && git init && git add . && git commit -m "buat branch baru untuk pengembangan jaggeryapps" \
     && git branch -M jaggeryapps && git branch \
-    # && git push origin jaggeryapps \
+    && git push origin jaggeryapps \
     \
     && ls && echo "\n" \
     && cp -r ${WSO2_SERVER_HOME}/repository/deployment/server/synapse-configs ${USER_HOME}/${USER_GROUP}-tmp \
