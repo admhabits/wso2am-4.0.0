@@ -58,7 +58,7 @@ ENV JAVA_HOME=/opt/java/openjdk \
 # Membuat argumen untuk konfigurasi pengguna/grup
 ARG REMOTE_NAME=apim
 ARG MY_EMAIL_GIT=admhabits@gmail.com
-ARG ACCESS_TOKEN=
+ARG ACCESS_TOKEN=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
 
 ARG USER=wso2carbon
 ARG USER_ROOT=alam

@@ -36,8 +36,10 @@ services:
       - ./conf/wso2am:/home/wso2carbon/wso2-config-volume
     ports:
       - "9443:9443"
+      - "8280:8280"
+      - "8243:8243"
     annotations:
-      dev.okteto.com/auto-ingress: 'true'
+      # dev.okteto.com/auto-ingress: 'true'
       # nginx.ingress.kubernetes.io/backend-protocol: HTTPS
 endpoints:
   wso2am:
