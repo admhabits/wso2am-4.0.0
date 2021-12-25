@@ -64,7 +64,7 @@ ARG USER_GROUP=wso2
 ARG USER_GROUP_ID=802
 ARG USER_HOME=/home/${USER}
 ARG MY_EMAIL_GIT=admhabits@gmail.com
-ARG ACCESS_TOKEN=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
+ARG ACCESS_TOKEN=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
 
 
 # Membuat argumen untuk instalasi produk WSO2
@@ -180,10 +180,10 @@ RUN \
     && cd ${WSO2_SERVER_HOME} \
     && echo "\n\ Masuk direktori git clone : $ cd ${WSO2_SERVER_HOME}" \
     && ls -l && echo "\n"\
-    # \
-    # && echo "\n\ ===== SETUP GLOBAL GIT =====" \
-    # && git config --global user.email ${MY_EMAIL_GIT} \
-    # && git config --global user.user ${USER} \
+    \
+    && echo "\n\ ===== SETUP GLOBAL GIT =====" \
+    && git config --global user.email ${MY_EMAIL_GIT} \
+    && git config --global user.user ${USER} \
     \
     && git init \
     && git remote add origin ${WSO2_GITHUB_REMOTE_LINK} \
@@ -194,16 +194,18 @@ RUN \
     \
     && echo "\n\ Pindah branch repository ${REMOTE_BRANCH} : $ git checkout ${REMOTE_BRANCH}" \
     && ls && echo "\n"\
-    && rm -rf .git && cd .. \
+    && git merge master && git add . && git commit -m "Merge files from master" && git push origin ${REMOTE_BRANCH}\
+    && wget -qO- https://raw.githubusercontent.com/Val7498/Install-code-server/master/script.sh
+    # && rm -rf .git && cd .. \
     \
     && echo "\n\ ===== Inisialisasi Jaggeryapps WSO2AM =====" \
     && cd ${WSO2_SERVER_HOME}/repository/deployment/server/jaggeryapps \
     && ls && echo "\n"\
-    \
-    && echo "\n\ ===== Buat Branch Baru =====" \
-    && git init && git add . && git commit -m "buat branch baru untuk pengembangan jaggeryapps" \
-    && git branch -M jaggeryapps && git branch \
-    && git push origin jaggeryapps \
+    # \
+    # && echo "\n\ ===== Buat Branch Baru =====" \
+    # && git init && git add . && git commit -m "buat branch baru untuk pengembangan jaggeryapps" \
+    # && git branch -M jaggeryapps && git branch \
+    # && git push origin jaggeryapps \
     \
     && ls && echo "\n" \
     && cp -r ${WSO2_SERVER_HOME}/repository/deployment/server/synapse-configs ${USER_HOME}/${USER_GROUP}-tmp \

@@ -36,13 +36,23 @@ services:
       - ./conf/wso2am:/home/wso2carbon/wso2-config-volume
     ports:
       - "9443:9443"
-      - "8280:8280"
-      - "8243:8243"
+      # - "8280:8280"
+      # - "8243:8243"
     annotations:
-      # dev.okteto.com/auto-ingress: 'true'
-      nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+      dev.okteto.com/auto-ingress: 'true'
+      # nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+  vscode:
+    build: vscode
+    ports:
+      - "8181:8181"
+    annotations:
+      dev.okteto.com/auto-ingress: 'true'
 endpoints:
   wso2am:
   - path: /
     service: wso2am
     port: 9443
+  vscode:
+  - path: /
+    service: vscode
+    port: 8181
