@@ -119,7 +119,8 @@ RUN \
         vim \
         git \
         nodejs \
-        npm 
+        npm \
+        openssl
 
 # Tambahkan distribusi produk WSO2 ke direktori home pengguna
 

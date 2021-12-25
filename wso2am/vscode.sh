@@ -21,8 +21,8 @@ then
 else
 	cert="false"
 fi
-sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install openssl wget -y
+# sudo apt-get update && sudo apt-get upgrade
+# sudo apt-get install openssl wget -y
 
 mkdir "$HOME"/code-server
 mkdir "$HOME"/code-server/certs
