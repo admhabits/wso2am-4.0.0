@@ -1,0 +1,48 @@
+name: product-apim
+services:
+  mysql:
+    image: mysql:5.7.34
+    labels:
+      app: mysql
+    ports:
+      - 3306
+    resources:
+      storage: 1Gi
+    volumes:
+      - ./conf/mysql/scripts:/docker-entrypoint-initdb.d
+      - ./conf/mysql/conf/my.cnf:/etc/mysql/my.cnf
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=api_portal
+      - MYSQL_USER=alamwibowo
+      - MYSQL_PASSWORD=P@ssword1234
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-uroot", "-proot"]
+      interval: 30s
+      timeout: 60s
+      retries: 5
+      start_period: 80s
+  wso2am:
+    build: wso2am
+    healthcheck:
+      test: ["CMD", "nc", "-z","localhost", "9443"]
+      interval: 10s
+      start_period: 180s
+      retries: 20
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - ./conf/wso2am:/home/wso2carbon/wso2-config-volume
+    ports:
+      - "9443:9443"
+      - "8280:8280"
+      - "8243:8243"
+    annotations:
+      # dev.okteto.com/auto-ingress: 'true'
+      nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+endpoints:
+  wso2am:
+  - path: /
+    service: wso2am
+    port: 9443

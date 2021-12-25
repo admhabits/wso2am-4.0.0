@@ -1,0 +1,8 @@
+name: wso2am
+command: bash
+workdir: /home/wso2carbon
+sync:
+- .:/home/wso2carbon
+forward:
+- 9443:9443
+autocreate: true
