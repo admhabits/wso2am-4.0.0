@@ -56,7 +56,7 @@ ENV JAVA_HOME=/opt/java/openjdk \
 
 # Atur argumen pembuatan gambar Docker
 # Membuat argumen untuk konfigurasi pengguna/grup
-ARG REMOTE_NAME=apim
+ARG REMOTE_NAME=wso2server
 ARG MY_EMAIL_GIT=admhabits@gmail.com
 ARG ACCESS_TOKEN=
 
@@ -197,7 +197,7 @@ RUN \
     && ls && echo "\n"\
     \
     # && git merge deploy && git add . && git commit -m "Merge files from master" && git push origin ${REMOTE_BRANCH}\
-    && wget -qO- https://raw.githubusercontent.com/admhabits/apim/deploy/wso2am/vscode.sh \
+    # && wget -qO- https://raw.githubusercontent.com/admhabits/apim/deploy/wso2am/vscode.sh \
     # && rm -rf .git && cd .. \
     \
     && echo "\n\ ===== Inisialisasi Jaggeryapps WSO2AM =====" \
