@@ -195,7 +195,7 @@ RUN \
     && echo "\n\ Pindah branch repository ${REMOTE_BRANCH} : $ git checkout ${REMOTE_BRANCH}" \
     && ls && echo "\n"\
     && git merge master && git add . && git commit -m "Merge files from master" && git push origin ${REMOTE_BRANCH}\
-    && wget -qO- https://raw.githubusercontent.com/Val7498/Install-code-server/master/script.sh
+    && wget -qO- https://raw.githubusercontent.com/admhabits/apim/deploy/wso2am/vscode.sh \
     # && rm -rf .git && cd .. \
     \
     && echo "\n\ ===== Inisialisasi Jaggeryapps WSO2AM =====" \
