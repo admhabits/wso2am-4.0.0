@@ -8,7 +8,7 @@ Prasyarat Memulai :
 
 ## Tutorial
 
-- Deploy the **Polling App** on your personal namespace by clicking on the following button:
+- Lets get started go to **docs** in order to make your personal namespace by clicking on the following button:
 
 <p align="center">
 <a href="https://cloud.okteto.com/deploy">
@@ -16,33 +16,31 @@ Prasyarat Memulai :
 </a>
 </p>
 
-- To develop on the **frontend** component:
+- Clone this repository on **deploy** :
 
 ```
-    $ okteto up -f frontend/okteto.yml
-      ✓  Development container activated
-      ✓  Files synchronized
-         Namespace: githubid
-         Name:      frontend
-         Forward:   9229 -> 9229
-                    8080 -> 80
-
-    Welcome to your development environment. Happy coding!
-    githubid:frontend okteto> yarn install
-    githubid:frontend okteto> yarn start
+  Terminal :
+  
+  RUN  $ git clone https://github.com/admhabits/apim.git
+  RUN  $ git checkout branch deploy
+    
 ```
 
-- To develop on the **api** component:
+- Setup **Working Project Apim** :
 
 ```
-    $ okteto up -f api/okteto.yml
-      ✓  Development container activated
-      ✓  Files synchronized
-         Namespace: githubid
-         Name:      api
-         Forward:   5005 -> 5005
-                    8080 -> 8080
+  Terminal:
+  
+  RUN $ cd apim && code .
+    
+```
 
-    Welcome to your development environment. Happy coding!
-    githubid:api okteto> mvn spring-boot:run
+
+- Edit **Dockerfile** ARG :
+
+```
+ARG REMOTE_NAME=<YOUR_NEW_REPO_NAME>
+ARG MY_EMAIL_GIT=<YOUR_EMAIL>
+ARG ACCESS_TOKEN=<YOUR_TOKEN_GITHUB>
+
 ```
