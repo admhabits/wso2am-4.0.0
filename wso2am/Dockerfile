@@ -68,7 +68,7 @@ ARG ACCESS_TOKEN=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
 
 
 # Membuat argumen untuk instalasi produk WSO2
-ARG REMOTE_NAME=wso2am
+ARG REMOTE_NAME=apim
 ARG REMOTE_BRANCH=server
 ARG WSO2_SERVER_NAME=wso2am
 ARG WSO2_SERVER_VERSION=4.0.0
