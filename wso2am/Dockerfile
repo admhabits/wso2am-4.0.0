@@ -201,7 +201,7 @@ RUN \
     \
     && echo "\n\ ===== Buat Branch Baru =====" \
     && git init && git add . && git commit -m "buat branch baru untuk pengembangan jaggeryapps" \
-    && git branch -M jaggeryapps && git branch &&\
+    && git branch -M jaggeryapps && git branch \
     # && git push origin jaggeryapps \
     \
     && ls && echo "\n" \
