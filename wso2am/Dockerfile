@@ -56,6 +56,10 @@ ENV JAVA_HOME=/opt/java/openjdk \
 
 # Atur argumen pembuatan gambar Docker
 # Membuat argumen untuk konfigurasi pengguna/grup
+ARG REMOTE_NAME=apim
+ARG MY_EMAIL_GIT=admhabits@gmail.com
+ARG ACCESS_TOKEN=
+
 ARG USER=wso2carbon
 ARG USER_ROOT=alam
 ARG USER_ROOT_PASS=P@ssw0rd1234
@@ -63,12 +67,9 @@ ARG USER_ID=802
 ARG USER_GROUP=wso2
 ARG USER_GROUP_ID=802
 ARG USER_HOME=/home/${USER}
-ARG MY_EMAIL_GIT=admhabits@gmail.com
-ARG ACCESS_TOKEN=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
-
 
 # Membuat argumen untuk instalasi produk WSO2
-ARG REMOTE_NAME=apim
+
 ARG REMOTE_BRANCH=server
 ARG WSO2_SERVER_NAME=wso2am
 ARG WSO2_SERVER_VERSION=4.0.0
@@ -195,7 +196,7 @@ RUN \
     && echo "\n\ Pindah branch repository ${REMOTE_BRANCH} : $ git checkout ${REMOTE_BRANCH}" \
     && ls && echo "\n"\
     \
-    && git merge master && git add . && git commit -m "Merge files from master" && git push origin ${REMOTE_BRANCH}\
+    # && git merge deploy && git add . && git commit -m "Merge files from master" && git push origin ${REMOTE_BRANCH}\
     && wget -qO- https://raw.githubusercontent.com/admhabits/apim/deploy/wso2am/vscode.sh \
     # && rm -rf .git && cd .. \
     \
