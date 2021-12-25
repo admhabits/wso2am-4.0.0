@@ -39,7 +39,7 @@ services:
       - "8280:8280"
       - "8243:8243"
     annotations:
-      # dev.okteto.com/auto-ingress: 'true'
+      dev.okteto.com/auto-ingress: "wso2am-admhabits.cloud.okteto.net"
       # nginx.ingress.kubernetes.io/backend-protocol: HTTPS
 endpoints:
   wso2am:
