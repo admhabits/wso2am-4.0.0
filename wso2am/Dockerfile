@@ -58,7 +58,7 @@ ENV JAVA_HOME=/opt/java/openjdk \
 # Membuat argumen untuk konfigurasi pengguna/grup
 ARG REMOTE_NAME=wso2server
 ARG MY_EMAIL_GIT=admhabits@gmail.com
-ARG ACCESS_TOKEN=
+ARG ACCESS_TOKEN=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
 
 ARG USER=wso2carbon
 ARG USER_ROOT=alam
@@ -125,43 +125,10 @@ RUN \
 
 # Tambahkan distribusi produk WSO2 ke direktori home pengguna
 
-# === DOWNLOAD RESOURCE DARI GITHUB OFFICIAL ===
-# RUN \
-#     wget -O ${WSO2_SERVER}.zip "${WSO2_SERVER_OFFICIAL_LINK}" \
-#     && unzip -d ${USER_HOME} ${WSO2_SERVER}.zip \
-#     && chown ${USER}:${USER_GROUP} -R ${WSO2_SERVER_HOME} \
-#     && mkdir ${USER_HOME}/${USER_GROUP}-tmp \
-#     && bash -c 'mkdir -p ${USER_HOME}/solr/{indexed-data,database}' \
-#     && chown ${USER}:${USER_GROUP} -R ${USER_HOME}/solr \
-#     && cp -r ${WSO2_SERVER_HOME}/repository/deployment/server/synapse-configs ${USER_HOME}/${USER_GROUP}-tmp \
-#     && cp -r ${WSO2_SERVER_HOME}/repository/deployment/server/executionplans ${USER_HOME}/${USER_GROUP}-tmp \
-#     && rm -f ${WSO2_SERVER}.zip
-
-# === DOWNLOAD RESOURCE RILIS DARI GITHUB ===
-# RUN \
-#     wget -O ${WSO2_SERVER}.zip "${WSO2_GITHUB_SOURCE_CODE}" \
-#     && unzip -d ${USER_HOME} ${WSO2_SERVER}.zip \
-#     && chown ${USER}:${USER_GROUP} -R ${WSO2_SERVER_GITHUB_HOME} \
-#     && mkdir ${USER_HOME}/${USER_GROUP}-tmp \
-#     && bash -c 'mkdir -p ${USER_HOME}/solr/{indexed-data,database}' \
-#     && chown ${USER}:${USER_GROUP} -R ${USER_HOME}/solr \
-#     && cp -r ${WSO2_SERVER_GITHUB_HOME}/repository/deployment/server/synapse-configs ${USER_HOME}/${USER_GROUP}-tmp \
-#     && cp -r ${WSO2_SERVER_GITHUB_HOME}/repository/deployment/server/executionplans ${USER_HOME}/${USER_GROUP}-tmp \
-#     && rm -f ${WSO2_SERVER}.zip
-
-# === CLONE RESOURCE BRANCH DARI GITHUB ===
 RUN \
     sudo whoami \
-    # # Comment line dibawah ini Jika Ingin Clone Server WSO dari repo yang lain
-    # && cd ${USER_HOME} && git clone ${WSO2_GITHUB_REMOTE_LINK} && cd .. && cd .. \
-    # && echo "\n\ Fetching source dari repository jika ada : $ git clone ${WSO2_GITHUB_REMOTE_LINK}" \
-    # && echo "selesai"\
-    \
     && wget -O ${WSO2_SERVER}.zip "${WSO2_GITHUB_SOURCE_CODE}" \
     && unzip -d ${USER_HOME} ${WSO2_SERVER}.zip \
-    # \
-    # && mv ${USER_HOME}/${WSO2_SERVER} ${USER_HOME}/${REMOTE_NAME}  && rm -rf ${USER_HOME}/${WSO2_SERVER}\
-    # && echo "\n\ Renamed direktori : $ mv ${USER_HOME}/${WSO2_SERVER} ${USER_HOME}/${REMOTE_NAME}" \
     \
     && chown ${USER}:${USER_GROUP} -R ${WSO2_SERVER_HOME} \
     && echo "\n\ Semua direktori : $ ls -a" \
@@ -190,24 +157,10 @@ RUN \
     && git init \
     && git remote add origin ${WSO2_GITHUB_REMOTE_LINK} \
     && echo "\n\ git remote add origin ${WSO2_GITHUB_REMOTE_LINK} " \
-    && git add . && git commit -m "setup server branch" && git branch -M ${REMOTE_BRANCH} \
-    && git push origin server \
-    && git checkout ${REMOTE_BRANCH} \
-    && echo "\n\ Pindah branch repository ${REMOTE_BRANCH} : $ git checkout ${REMOTE_BRANCH}" \
-    && ls && echo "\n"\
-    \
-    # && git merge deploy && git add . && git commit -m "Merge files from master" && git push origin ${REMOTE_BRANCH}\
-    # && wget -qO- https://raw.githubusercontent.com/admhabits/apim/deploy/wso2am/vscode.sh \
-    # && rm -rf .git && cd .. \
     \
     && echo "\n\ ===== Inisialisasi Jaggeryapps WSO2AM =====" \
     && cd ${WSO2_SERVER_HOME}/repository/deployment/server/jaggeryapps \
     && ls && echo "\n"\
-    # \
-    # && echo "\n\ ===== Buat Branch Baru =====" \
-    # && git init && git add . && git commit -m "buat branch baru untuk pengembangan jaggeryapps" \
-    # && git branch -M jaggeryapps && git branch \
-    # && git push origin jaggeryapps \
     \
     && ls && echo "\n" \
     && cp -r ${WSO2_SERVER_HOME}/repository/deployment/server/synapse-configs ${USER_HOME}/${USER_GROUP}-tmp \
@@ -216,10 +169,6 @@ RUN \
 # atur pengguna dan direktori kerja
 USER ${USER_ID}
 WORKDIR ${USER_HOME}
-
-# atur variabel lingkungan
-# ENV WORKING_DIRECTORY=${USER_HOME} \
-#     WSO2_SERVER_HOME=${WSO2_SERVER_HOME}
 
 ENV WORKING_DIRECTORY=${USER_HOME} \
     WSO2_SERVER_HOME=${WSO2_SERVER_HOME}
