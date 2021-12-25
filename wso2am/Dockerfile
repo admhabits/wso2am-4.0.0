@@ -82,7 +82,7 @@ ARG WSO2_SERVER_GITHUB_HOME=${USER_HOME}/${WSO2_SERVER_NAME}-${WSO2_SERVER}
 ARG WSO2_SERVER_REMOTE_HOME=${USER_HOME}/${REMOTE_NAME}
 
 ARG WSO2_GITHUB_REMOTE_LINK=https://${ACCESS_TOKEN}@github.com/admhabits/${REMOTE_NAME}.git
-ARG WSO2_GITHUB_SOURCE_CODE=https://github.com/admhabits/wso2am/archive/refs/tags/wso2am-4.0.0.zip
+ARG WSO2_GITHUB_SOURCE_CODE=https://github.com/admhabits/wso2am-4.0.0/archive/refs/heads/server.zip
 ARG WSO2_SERVER_OFFICIAL_LINK=https://github.com/wso2/${WSO2_SERVER_REPOSITORY}/releases/download/v${WSO2_SERVER_VERSION}/${WSO2_SERVER}.zip
 
 # Membuat argumen untuk MOTD
@@ -157,7 +157,7 @@ RUN \
     # && echo "\n\ Fetching source dari repository jika ada : $ git clone ${WSO2_GITHUB_REMOTE_LINK}" \
     # && echo "selesai"\
     \
-    && wget -O ${WSO2_SERVER}.zip "${WSO2_SERVER_OFFICIAL_LINK}" \
+    && wget -O ${WSO2_SERVER}.zip "${WSO2_GITHUB_SOURCE_CODE}" \
     && unzip -d ${USER_HOME} ${WSO2_SERVER}.zip \
     # \
     # && mv ${USER_HOME}/${WSO2_SERVER} ${USER_HOME}/${REMOTE_NAME}  && rm -rf ${USER_HOME}/${WSO2_SERVER}\
