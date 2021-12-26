@@ -66,10 +66,10 @@ which is under the Apache License, Version 2.0. \n\
 Read more about Apache License, Version 2.0 here @ http://www.apache.org/licenses/LICENSE-2.0.\n"
 
 # Buat pengguna dan grup non-root dan atur pesan masuk MOTD
-RUN adduser ${USERNAME} --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password \
-    && echo "${USERNAME}:password" | sudo chpasswd \
-    && echo "${USERNAME} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USERNAME} \
-    && chmod 0440 /etc/sudoers.d/${USERNAME}
+# RUN adduser ${USERNAME} --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password \
+#     && echo "${USERNAME}:password" | sudo chpasswd \
+#     && echo "${USERNAME} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USERNAME} \
+#     && chmod 0440 /etc/sudoers.d/${USERNAME}
 
 # Buat pengguna dan grup non-root dan atur pesan masuk MOTD
 RUN groupadd --system -g ${USER_GROUP_ID} ${USER_GROUP} \
