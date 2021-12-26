@@ -71,8 +71,7 @@ RUN adduser ${USERNAME} --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --di
     && echo "${USERNAME} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USERNAME} \
     && chmod 0440 /etc/sudoers.d/${USERNAME}
 
-RUN whoami
-
+# Buat pengguna dan grup non-root dan atur pesan masuk MOTD
 RUN groupadd --system -g ${USER_GROUP_ID} ${USER_GROUP} \
     && useradd --system --create-home --home-dir ${USER_HOME} --no-log-init -g ${USER_GROUP_ID} -u ${USER_ID} ${USERNAME} \
     && echo '[ ! -z "${TERM}" -a -r /etc/motd ] && cat /etc/motd' >> /etc/bash.bashrc; echo "${MOTD}" > /etc/motd
@@ -88,19 +87,16 @@ RUN \
         netcat \
         unzip \
         wget \
-        # mc \
-        # nano \
-        # vim \
+        mc \
+        nano \
         git \
-        # nodejs \
-        # npm 
-
-# Tambahkan distribusi produk WSO2 ke direktori home pengguna
+        nodejs \
+        npm 
 
 RUN \
     sudo whoami \
-    && wget -O ${REPOSITORY_NAME}.zip "${WSO2_GITHUB_SOURCE_CODE}" \
-    && unzip -d ${USER_HOME} ${REPOSITORY_NAME}.zip \
+    && wget -O ${REPOSITORY_NAME}-${GIT_BRANCH}.zip "${WSO2_GITHUB_SOURCE_CODE}" \
+    && unzip -d ${USER_HOME} ${REPOSITORY_NAME}-${GIT_BRANCH}.zip \
     \
     && chown ${USERNAME}:${USER_GROUP} -R ${WSO2_SERVER_HOME} \
     && echo "\n\ Semua direktori : $ ls -a" \
@@ -123,7 +119,7 @@ RUN \
     && ls -l && echo "\n"\
     \
     && echo "\n\ ===== SETUP GLOBAL GIT =====" \
-    && git config --global user.email ${MY_EMAIL_GIT} \
+    && git config --global user.email ${EMAIL} \
     && git config --global user.user ${USERNAME} \
     \
     && git init \
