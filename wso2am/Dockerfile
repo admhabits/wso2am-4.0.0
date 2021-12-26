@@ -39,7 +39,6 @@ ENV JAVA_HOME=/opt/java/openjdk \
 
 ARG EMAIL=admhabits@gmail.com
 ARG USERNAME=admhabits
-ARG PASS=P@ssw0rd1234
 
 ARG USER_ID=802
 ARG USER_GROUP=wso2
@@ -52,10 +51,9 @@ ARG TOKEN=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
 # Membuat argumen untuk instalasi produk WSO2
 
 ARG USER_HOME=/home/${USERNAME}
-ARG WSO2_SERVER_HOME=${USER_HOME}/${REPOSITORY_NAME}-${GIT_BRANCH}
+ARG WSO2_SERVER_HOME=${USER_HOME}/wso2am
 
 ARG WSO2_GITHUB_REMOTE_LINK=https://${TOKEN}@github.com/admhabits/${REPOSITORY_NAME}.git
-ARG WSO2_GITHUB_SOURCE_CODE=https://github.com/admhabits/wso2am-4.0.0/archive/b06f03311373af344db4a61e035bb9fddf935c91.zip
 
 # Membuat argumen untuk MOTD
 ARG MOTD="\n\
@@ -66,18 +64,9 @@ which is under the Apache License, Version 2.0. \n\
 Read more about Apache License, Version 2.0 here @ http://www.apache.org/licenses/LICENSE-2.0.\n"
 
 # Buat pengguna dan grup non-root dan atur pesan masuk MOTD
-# RUN adduser ${USERNAME} --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password \
-#     && echo "${USERNAME}:password" | sudo chpasswd \
-#     && echo "${USERNAME} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USERNAME} \
-#     && chmod 0440 /etc/sudoers.d/${USERNAME}
-
-# Buat pengguna dan grup non-root dan atur pesan masuk MOTD
 RUN groupadd --system -g ${USER_GROUP_ID} ${USER_GROUP} \
     && useradd --system --create-home --home-dir ${USER_HOME} --no-log-init -g ${USER_GROUP_ID} -u ${USER_ID} ${USERNAME} \
     && echo '[ ! -z "${TERM}" -a -r /etc/motd ] && cat /etc/motd' >> /etc/bash.bashrc; echo "${MOTD}" > /etc/motd
-
-# salin skrip init ke home
-COPY --chown=${USERNAME}:${USER_GROUP} docker-entrypoint.sh ${USER_HOME}/
 
 # Instal paket yang diperlukan
 RUN \
@@ -95,9 +84,6 @@ RUN \
 
 RUN \
     sudo whoami \
-    && wget -O ${REPOSITORY_NAME}-${GIT_BRANCH}.zip "${WSO2_GITHUB_SOURCE_CODE}" \
-    && unzip -d ${USER_HOME} ${REPOSITORY_NAME}-${GIT_BRANCH}.zip \
-    \
     && chown ${USERNAME}:${USER_GROUP} -R ${WSO2_SERVER_HOME} \
     && echo "\n\ Semua direktori : $ ls -a" \
     && echo "selesai"\

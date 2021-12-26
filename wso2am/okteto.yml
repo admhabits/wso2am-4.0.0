@@ -1,8 +1,8 @@
 name: wso2am
 command: bash
-workdir: /home/admhabits
+workdir: /home/admhabits/
 sync:
-- .:/home/admhabits
+- .:/home/admhabits/
 forward:
 - 9443:9443
 autocreate: true

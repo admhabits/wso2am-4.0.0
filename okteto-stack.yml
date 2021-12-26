@@ -33,7 +33,7 @@ services:
       mysql:
         condition: service_healthy
     volumes:
-      - ./conf/wso2am:/home/wso2carbon/wso2-config-volume
+      - ./conf/wso2am:/home/admhabits/wso2-config-volume
     ports:
       - "9443:9443"
       - "8280:8280"
