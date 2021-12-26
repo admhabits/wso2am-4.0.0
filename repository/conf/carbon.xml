@@ -58,7 +58,7 @@
        -->
     <ServerURL>local:/${carbon.context}/services/</ServerURL>
     <!--
-    <ServerURL>https://${carbon.local.ip}:${carbon.management.port}${carbon.context}/services/</ServerURL>
+    <ServerURL>https://${carbon.local.ip}${carbon.context}/services/</ServerURL>
     -->
      <!--
      The URL of the index page. This is where the user will be redirected after signing in to the
