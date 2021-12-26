@@ -56,34 +56,26 @@ ENV JAVA_HOME=/opt/java/openjdk \
 
 # Atur argumen pembuatan gambar Docker
 # Membuat argumen untuk konfigurasi pengguna/grup
-ARG REMOTE_NAME=wso2server
-ARG MY_EMAIL_GIT=admhabits@gmail.com
-ARG ACCESS_TOKEN=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
 
-ARG USER=wso2carbon
-ARG USER_ROOT=alam
-ARG USER_ROOT_PASS=P@ssw0rd1234
+ARG EMAIL=admhabits@gmail.com
+ARG USERNAME=admhabits
+ARG PASS=P@ssw0rd1234
+
 ARG USER_ID=802
 ARG USER_GROUP=wso2
 ARG USER_GROUP_ID=802
-ARG USER_HOME=/home/${USER}
+
+ARG GIT_BRANCH=server
+ARG REPOSITORY_NAME=wso2am-4.0.0
+ARG TOKEN=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
 
 # Membuat argumen untuk instalasi produk WSO2
 
-ARG REMOTE_BRANCH=server
-ARG WSO2_SERVER_NAME=wso2am
-ARG WSO2_SERVER_VERSION=4.0.0
+ARG USER_HOME=/home/${USERNAME}
+ARG WSO2_SERVER_HOME=${USER_HOME}/${REPOSITORY_NAME}-${GIT_BRANCH}
 
-ARG WSO2_SERVER_REPOSITORY=product-apim
-ARG WSO2_SERVER=${WSO2_SERVER_NAME}-${WSO2_SERVER_VERSION}-${REMOTE_BRANCH}
-ARG WSO2_SERVER_HOME=${USER_HOME}/${WSO2_SERVER}
-
-ARG WSO2_SERVER_GITHUB_HOME=${USER_HOME}/${WSO2_SERVER_NAME}-${WSO2_SERVER}
-ARG WSO2_SERVER_REMOTE_HOME=${USER_HOME}/${REMOTE_NAME}
-
-ARG WSO2_GITHUB_REMOTE_LINK=https://${ACCESS_TOKEN}@github.com/admhabits/${REMOTE_NAME}.git
+ARG WSO2_GITHUB_REMOTE_LINK=https://${TOKEN}@github.com/admhabits/${REPOSITORY_NAME}.git
 ARG WSO2_GITHUB_SOURCE_CODE=https://github.com/admhabits/wso2am-4.0.0/archive/refs/heads/server.zip
-ARG WSO2_SERVER_OFFICIAL_LINK=https://github.com/wso2/${WSO2_SERVER_REPOSITORY}/releases/download/v${WSO2_SERVER_VERSION}/${WSO2_SERVER}.zip
 
 # Membuat argumen untuk MOTD
 ARG MOTD="\n\
@@ -94,19 +86,20 @@ which is under the Apache License, Version 2.0. \n\
 Read more about Apache License, Version 2.0 here @ http://www.apache.org/licenses/LICENSE-2.0.\n"
 
 # Buat pengguna dan grup non-root dan atur pesan masuk MOTD
-RUN adduser ${USER_ROOT} --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password \
-    && echo "${USER_ROOT}:password" | sudo chpasswd \
+RUN adduser ${USERNAME} --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password \
+    && echo "${USERNAME}:password" | sudo chpasswd \
     && echo "$USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$USER \
     && chmod 0440 /etc/sudoers.d/$USER
 
 RUN whoami
 
 RUN groupadd --system -g ${USER_GROUP_ID} ${USER_GROUP} \
-    && useradd --system --create-home --home-dir ${USER_HOME} --no-log-init -g ${USER_GROUP_ID} -u ${USER_ID} ${USER} \
+    && useradd --system --create-home --home-dir ${USER_HOME} --no-log-init -g ${USER_GROUP_ID} -u ${USER_ID} ${USERNAME} \
     && echo '[ ! -z "${TERM}" -a -r /etc/motd ] && cat /etc/motd' >> /etc/bash.bashrc; echo "${MOTD}" > /etc/motd
 
 # salin skrip init ke home
-COPY --chown=wso2carbon:wso2 docker-entrypoint.sh ${USER_HOME}/
+COPY --chown=${USERNAME}:${USER_GROUP} docker-entrypoint.sh ${USER_HOME}/
+
 # Instal paket yang diperlukan
 RUN \
     apt-get update \
@@ -120,8 +113,7 @@ RUN \
         vim \
         git \
         nodejs \
-        npm \
-        openssl
+        npm 
 
 # Tambahkan distribusi produk WSO2 ke direktori home pengguna
 
@@ -130,7 +122,7 @@ RUN \
     && wget -O ${WSO2_SERVER}.zip "${WSO2_GITHUB_SOURCE_CODE}" \
     && unzip -d ${USER_HOME} ${WSO2_SERVER}.zip \
     \
-    && chown ${USER}:${USER_GROUP} -R ${WSO2_SERVER_HOME} \
+    && chown ${USERNAME}:${USER_GROUP} -R ${WSO2_SERVER_HOME} \
     && echo "\n\ Semua direktori : $ ls -a" \
     && echo "selesai"\
     \
@@ -138,8 +130,8 @@ RUN \
     && echo "\n\ Buat direktori : $ mkdir -p ${USER_HOME}/solr/{indexed-data,database}" \
     && echo "selesai"\
     \
-    && chown ${USER}:${USER_GROUP} -R ${USER_HOME}/solr \
-    && echo "\n\ Buat Permission Group : $ chown ${USER}:${USER_GROUP} -R ${USER_HOME}/solr" \
+    && chown ${USERNAME}:${USER_GROUP} -R ${USER_HOME}/solr \
+    && echo "\n\ Buat Permission Group : $ chown ${USERNAME}:${USER_GROUP} -R ${USER_HOME}/solr" \
     && echo "selesai"\
     \
     && mkdir ${USER_HOME}/${USER_GROUP}-tmp \
@@ -152,7 +144,7 @@ RUN \
     \
     && echo "\n\ ===== SETUP GLOBAL GIT =====" \
     && git config --global user.email ${MY_EMAIL_GIT} \
-    && git config --global user.user ${USER} \
+    && git config --global user.user ${USERNAME} \
     \
     && git init \
     && git remote add origin ${WSO2_GITHUB_REMOTE_LINK} \
@@ -177,4 +169,4 @@ ENV WORKING_DIRECTORY=${USER_HOME} \
 EXPOSE 9763 9443 9999 11111 8280 8243 5672 9711 9611 9099
 
 # mulai wadah(container) dan mulai server Karbon WSO2
-ENTRYPOINT ["/home/wso2carbon/docker-entrypoint.sh"]
+ENTRYPOINT ["/home/${USERNAME}/docker-entrypoint.sh"]
