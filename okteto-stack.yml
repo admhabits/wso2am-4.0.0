@@ -38,11 +38,16 @@ services:
       - "9443:9443"
       - "8280:8280"
       - "8243:8243"
+      - "8080:8080"
     annotations:
-      dev.okteto.com/auto-ingress: "apim"
+      # dev.okteto.com/auto-ingress: "apim"
       # nginx.ingress.kubernetes.io/backend-protocol: HTTPS
 endpoints:
   wso2am:
   - path: /
     service: wso2am
     port: 9443
+  auth:
+  - path: /
+    service: wso2am
+    port: 8080
