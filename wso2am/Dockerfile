@@ -119,8 +119,8 @@ RUN \
 
 RUN \
     sudo whoami \
-    && wget -O ${WSO2_SERVER}.zip "${WSO2_GITHUB_SOURCE_CODE}" \
-    && unzip -d ${USER_HOME} ${WSO2_SERVER}.zip \
+    && wget -O ${REPOSITORY_NAME}.zip "${WSO2_GITHUB_SOURCE_CODE}" \
+    && unzip -d ${USER_HOME} ${REPOSITORY_NAME}.zip \
     \
     && chown ${USERNAME}:${USER_GROUP} -R ${WSO2_SERVER_HOME} \
     && echo "\n\ Semua direktori : $ ls -a" \
