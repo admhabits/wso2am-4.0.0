@@ -32,7 +32,7 @@ describe('AuthManager',
                     function () {
                         let authenticator = new AuthManager();
                         let environment = {
-                            "host": "localhost:9292",
+                            "host": "wso2am-admhabits.cloud.okteto.net:9292",
                             "loginTokenPath": "/login/token",
                             "label": "Production"
                         };

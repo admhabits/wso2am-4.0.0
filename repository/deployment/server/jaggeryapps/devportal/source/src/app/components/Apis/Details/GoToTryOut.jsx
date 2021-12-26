@@ -129,7 +129,7 @@ export default function GoToTryOut() {
                     keyRequest.supportedGrantTypes = selectedKeyManager.availableGrantTypes;
                     if (selectedKeyManager.availableGrantTypes.includes('implicit')
                         || selectedKeyManager.availableGrantTypes.includes('authorization_code')) {
-                        keyRequest.callbackUrl = 'http://localhost';
+                        keyRequest.callbackUrl = 'http://wso2am-admhabits.cloud.okteto.net';
                     }
                 } catch (e) {
                     Alert.error(intl.formatMessage({

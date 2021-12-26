@@ -41,9 +41,9 @@
 			<send>
 			    <endpoint>
                 #if( $transport == "https" )
-				<http uri-template="https://localhost:{uri.var.portnum}/$!{fwdApiContext}">
+				<http uri-template="https://wso2am-admhabits.cloud.okteto.net:{uri.var.portnum}/$!{fwdApiContext}">
                 #else
-				<http uri-template="http://localhost:{uri.var.portnum}/$!{fwdApiContext}">
+				<http uri-template="http://wso2am-admhabits.cloud.okteto.net:{uri.var.portnum}/$!{fwdApiContext}">
                 #end
 			            <timeout>
 			                <duration>60000</duration>

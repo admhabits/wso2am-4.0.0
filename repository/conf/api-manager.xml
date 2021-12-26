@@ -239,7 +239,7 @@
              In distributed deployment we should configure this property in key manager node by pointing
              gateway https( /http, we recommend users to use 'https' endpoints for security purpose) url.
              Also please note that we should point gateway revoke service to key manager -->
-        <RevokeAPIURL>https://localhost:${https.nio.port}/revoke</RevokeAPIURL>
+        <RevokeAPIURL>https://wso2am-admhabits.cloud.okteto.net:${https.nio.port}/revoke</RevokeAPIURL>
         <!-- Whether to encrypt tokens when storing in the Database
         Note: If changing this value to true, change the value of <TokenPersistenceProcessor> to
         org.wso2.carbon.identity.oauth.tokenprocessor.EncryptionDecryptionPersistenceProcessor in the identity.xml -->
@@ -256,7 +256,7 @@
             <Property name="ttl">5000</Property>
         </RealtimeNotifier>
         <PersistentNotifier>
-            <Property name="hostname">https://localhost:2379/v2/keys/jti/</Property>
+            <Property name="hostname">https://wso2am-admhabits.cloud.okteto.net:2379/v2/keys/jti/</Property>
             <Property name="ttl">5000</Property>
             <Property name="username">root</Property>
             <Property name="password">root</Property>
@@ -671,11 +671,11 @@
 
     <WorkflowConfigurations>
         <Enabled>false</Enabled>
-    	<ServerUrl>https://localhost:9445/bpmn</ServerUrl>
+    	<ServerUrl>https://wso2am-admhabits.cloud.okteto.net:9445/bpmn</ServerUrl>
     	<ServerUser>${admin.username}</ServerUser>
     	<ServerPassword>${admin.password}</ServerPassword>
     	<WorkflowCallbackAPI>https://wso2am-admhabits.cloud.okteto.net/api/am/admin/v2/workflows/update-workflow-status</WorkflowCallbackAPI>
-        <TokenEndPoint>https://localhost:${https.nio.port}/token</TokenEndPoint>
+        <TokenEndPoint>https://wso2am-admhabits.cloud.okteto.net:${https.nio.port}/token</TokenEndPoint>
         <DCREndPoint>https://wso2am-admhabits.cloud.okteto.net/client-registration/v0.17/register</DCREndPoint>
         <DCREndPointUser>${admin.username}</DCREndPointUser>
         <DCREndPointPassword>${admin.password}</DCREndPointPassword>
@@ -710,7 +710,7 @@
             <Enabled>false</Enabled>
             <Name>zipkin</Name>
             <Properties>
-                <HostName>localhost</HostName>
+                <HostName>wso2am-admhabits.cloud.okteto.net</HostName>
                 <Port>9411</Port>
             </Properties>
         </RemoteTracer>

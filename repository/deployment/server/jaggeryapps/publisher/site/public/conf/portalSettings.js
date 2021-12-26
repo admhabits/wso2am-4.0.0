@@ -6,7 +6,7 @@ const Settings = {
             forwardedHeader: 'X-Forwarded-For',
         },
         origin: {
-            host: 'localhost',
+            host: 'wso2am-admhabits.cloud.okteto.net',
         },
         subscriptionLimit: 1000,
         isPassive: true,

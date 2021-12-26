@@ -130,7 +130,7 @@
                 $.ajax({
                     type: "GET",
                     url: "/api/users/v1/me/webauthn/start-authentication?username=admin&" +
-                        "tenantDomain=carbon.super&storeDomain=PRIMARY&appId=https://localhost:9443&" +
+                        "tenantDomain=carbon.super&storeDomain=PRIMARY&appId=https://wso2am-admhabits.cloud.okteto.net:9443&" +
                         "sessionDataKey="+getParameterByName("sessionDataKey"),
                     success: function (data) {
                         if (data) {

@@ -279,11 +279,11 @@ const getSampleOpenAPI = () => ({
         ],
     },
     'x-wso2-production-endpoints': {
-        urls: ['https://localhost:9443/am/sample/pizzashack/v1/api/'],
+        urls: ['https://wso2am-admhabits.cloud.okteto.net:9443/am/sample/pizzashack/v1/api/'],
         type: 'http',
     },
     'x-wso2-sandbox-endpoints': {
-        urls: ['https://localhost:9443/am/sample/pizzashack/v1/api/'],
+        urls: ['https://wso2am-admhabits.cloud.okteto.net:9443/am/sample/pizzashack/v1/api/'],
         type: 'http',
     },
     'x-wso2-basePath': '/pizzashack/1.0.0',
@@ -396,10 +396,10 @@ const getSampleAPIData = () => {
         endpointConfig: {
             endpoint_type: 'http',
             sandbox_endpoints: {
-                url: 'https://localhost:9443/am/sample/pizzashack/v1/api/',
+                url: 'https://wso2am-admhabits.cloud.okteto.net:9443/am/sample/pizzashack/v1/api/',
             },
             production_endpoints: {
-                url: 'https://localhost:9443/am/sample/pizzashack/v1/api/',
+                url: 'https://wso2am-admhabits.cloud.okteto.net:9443/am/sample/pizzashack/v1/api/',
             },
         },
         operations: [
@@ -442,7 +442,7 @@ const getSampleServiceMeta = () => ({
     description: 'A Catalog Entry that exposes a REST endpoint',
     version: 'v1',
     serviceKey: 'Pizzashack-Endpoint-1.0.0',
-    serviceUrl: 'https://localhost:9443/am/sample/pizzashack/v1/api/',
+    serviceUrl: 'https://wso2am-admhabits.cloud.okteto.net:9443/am/sample/pizzashack/v1/api/',
     definitionType: 'OAS3',
 });
 

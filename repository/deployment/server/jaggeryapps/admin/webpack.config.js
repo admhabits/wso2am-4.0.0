@@ -53,15 +53,15 @@ module.exports = function (env,args) {
             before: devServerBefore,
             proxy: {
                 '/services/': {
-                    target: 'https://localhost:9443/admin',
+                    target: 'https://wso2am-admhabits.cloud.okteto.net:9443/admin',
                     secure: false,
                 },
                 '/api/am': {
-                    target: 'https://localhost:9443',
+                    target: 'https://wso2am-admhabits.cloud.okteto.net:9443',
                     secure: false,
                 },
                 '/admin/services': {
-                    target: 'https://localhost:9443',
+                    target: 'https://wso2am-admhabits.cloud.okteto.net:9443',
                     secure: false,
                 },
                 '/admin': {

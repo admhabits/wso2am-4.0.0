@@ -10,8 +10,8 @@ const AppConfig = {
             forwardedHeader: 'X-Forwarded-For',
         },
         origin: {
-            host: 'localhost', // Used to construct the loopback origin, It's very unlike you need to change this hostname,
-            // It is `localhost` in 99.99% case, If you want to change server host name change it in deployment.toml
+            host: 'wso2am-admhabits.cloud.okteto.net', // Used to construct the loopback origin, It's very unlike you need to change this hostname,
+            // It is `wso2am-admhabits.cloud.okteto.net` in 99.99% case, If you want to change server host name change it in deployment.toml
         },
         feedback: { // If enabled, Feedback form option(an icon) will be available in the footer LHS bottom
             enable: false,
@@ -19,8 +19,8 @@ const AppConfig = {
         },
     },
     idp: {
-        origin: 'https://localhost:9443',
-        checkSessionEndpoint: 'https://localhost:9443/checksession/endpoint',
+        origin: 'https://wso2am-admhabits.cloud.okteto.net:9443',
+        checkSessionEndpoint: 'https://wso2am-admhabits.cloud.okteto.net:9443/checksession/endpoint',
     },
 };
 

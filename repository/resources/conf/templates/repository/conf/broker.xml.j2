@@ -30,7 +30,7 @@ This file is ciphertool compliant. Refer PRODUCT_HOME/repository/conf/security/c
         The node ID of each member should ALWAYS be unique.-->
         <nodeID>default</nodeID>
         <!-- Thrift is used to maintain and sync slot (message groups) ranges between MB nodes. -->
-        <thriftServerHost>localhost</thriftServerHost>
+        <thriftServerHost>wso2am-admhabits.cloud.okteto.net</thriftServerHost>
         <thriftServerPort>7611</thriftServerPort>
         <thriftSOTimeout>0</thriftSOTimeout>
         <!--Thrift server reconnect timeout. Value specified in SECONDS-->
@@ -158,7 +158,7 @@ This file is ciphertool compliant. Refer PRODUCT_HOME/repository/conf/security/c
                    -->
                    <authenticator class="org.wso2.carbon.andes.authentication.andes.CarbonBasedMQTTAuthenticator"/>
                     <!--authenticator class="org.wso2.carbon.andes.authentication.andes.OAuth2BasedMQTTAuthenticator">
-                        <property name="hostURL">https://localhost:9443/services/OAuth2TokenValidationService</property>
+                        <property name="hostURL">https://wso2am-admhabits.cloud.okteto.net:9443/services/OAuth2TokenValidationService</property>
                         <property name="username">admin</property>
                         <property name="password">admin</property>
                         <property name="maxConnectionsPerHost">10</property>

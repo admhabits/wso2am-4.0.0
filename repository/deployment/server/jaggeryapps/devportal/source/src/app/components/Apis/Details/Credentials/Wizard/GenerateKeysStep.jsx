@@ -156,7 +156,7 @@ const generateKeysStep = (props) => {
                     newKeyRequest.supportedGrantTypes = selectedKeyManager.availableGrantTypes;
                     if (selectedKeyManager.availableGrantTypes.includes('implicit')
                         || selectedKeyManager.availableGrantTypes.includes('authorization_code')) {
-                        newKeyRequest.callbackUrl = 'http://localhost';
+                        newKeyRequest.callbackUrl = 'http://wso2am-admhabits.cloud.okteto.net';
                     }
                     if (!selectedKeyManager.availableGrantTypes.includes('client_credentials')) {
                         setNextActive(false);

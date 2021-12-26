@@ -26,33 +26,33 @@
     <!-- *************** Application specific configurations ********************** -->
     <!--context-param>
         <param-name>ServiceProviderApp-/samlsso_login.do</param-name>
-        <param-value>http://localhost:8080/customauthenticationendpoint/login.do</param-value>
+        <param-value>http://wso2am-admhabits.cloud.okteto.net:8080/customauthenticationendpoint/login.do</param-value>
     </context-param-->
     <!--context-param>
         <param-name>ServiceProviderApp-/oauth2_authz.do</param-name>
-        <param-value>http://localhost:8080/authenticationendpoint/oauth2_authz.do</param-value>
+        <param-value>http://wso2am-admhabits.cloud.okteto.net:8080/authenticationendpoint/oauth2_authz.do</param-value>
     </context-param-->
     <!--context-param>
         <param-name>ServiceProviderApp-/oauth2_error.do</param-name>
-        <param-value>http://localhost:8080/authenticationendpoint/oauth2_error.do</param-value>
+        <param-value>http://wso2am-admhabits.cloud.okteto.net:8080/authenticationendpoint/oauth2_error.do</param-value>
     </context-param-->
     <!--context-param>
         <param-name>ServiceProviderApp-/oauth2_consent.do</param-name>
-        <param-value>http://localhost:8080/authenticationendpoint/oauth2_consent.do</param-value>
+        <param-value>http://wso2am-admhabits.cloud.okteto.net:8080/authenticationendpoint/oauth2_consent.do</param-value>
     </context-param-->
     <!-- **************** End of Application specific configurations ************************* -->
 
     <!-- *************** Global configurations ********************** -->
     <!--context-param>
         <param-name>/retry.do</param-name>
-        <param-value>http://localhost:8080/customauthenticationendpoint/retry.do?type=retry.do</param-value>
+        <param-value>http://wso2am-admhabits.cloud.okteto.net:8080/customauthenticationendpoint/retry.do?type=retry.do</param-value>
     </context-param-->
     <!-- *************** End of Global configurations ********************** -->
 
     <!-- *************** Account Recovery Endpoint Context URL Configuration ********************** -->
     <!--context-param>
        <param-name>IdentityManagementEndpointContextURL</param-name>
-       <param-value>https://localhost:9443/accountrecoveryendpoint</param-value>
+       <param-value>https://wso2am-admhabits.cloud.okteto.net:9443/accountrecoveryendpoint</param-value>
    </context-param-->
     <context-param>
        <param-name>AccountRecoveryRESTEndpointURL</param-name>
@@ -70,7 +70,7 @@
     <!-- *************** Identity Server Endpoint URL Configuration ********************** -->
     <!--context-param>
         <param-name>IdentityServerEndpointContextURL</param-name>
-        <param-value>https://localhost:9443</param-value>
+        <param-value>https://wso2am-admhabits.cloud.okteto.net:9443</param-value>
     </context-param-->
     <!-- *************** End of Identity Server Endpoint URL Configuration ********************** -->
     <!--context-param>
@@ -80,7 +80,7 @@
     <!-- *************** Authentication REST API URL Configuration ********************** -->
     <!--context-param>
         <param-name>AuthenticationRESTEndpointURL</param-name>
-        <param-value>https://localhost:9443/api/identity/auth/v1.1/</param-value>
+        <param-value>https://wso2am-admhabits.cloud.okteto.net:9443/api/identity/auth/v1.1/</param-value>
     </context-param-->
     <!-- *************** End of Authentication REST API URL Configuration ********************** -->
 

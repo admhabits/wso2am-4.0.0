@@ -54,11 +54,11 @@
             </SSLHostConfig>
         </Connector>
 
-        <Engine name="Catalina" defaultHost="localhost">
+        <Engine name="Catalina" defaultHost="wso2am-admhabits.cloud.okteto.net">
 
             <Realm className="org.wso2.carbon.tomcat.ext.realms.CarbonTomcatRealm"/>
 
-            <Host name="localhost" unpackWARs="true" deployOnStartup="false" autoDeploy="false"
+            <Host name="wso2am-admhabits.cloud.okteto.net" unpackWARs="true" deployOnStartup="false" autoDeploy="false"
                   appBase="${carbon.home}/repository/deployment/server/webapps/">
                 <Valve className="org.wso2.carbon.tomcat.ext.valves.RequestCorrelationIdValve"
                        headerToCorrelationIdMapping="{'activityid':'Correlation-ID'}" queryToCorrelationIdMapping="{'RelayState':'Correlation-ID'}"/>
@@ -90,4 +90,3 @@
         </Engine>
     </Service>
 </Server>
-

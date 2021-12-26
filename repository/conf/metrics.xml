@@ -91,9 +91,9 @@
             <!-- The type used with Data Publisher -->
             <Type>thrift</Type>
             <!-- Data Receiver URL used by the Data Publisher -->
-            <ReceiverURL>tcp://localhost:7611</ReceiverURL>
+            <ReceiverURL>tcp://wso2am-admhabits.cloud.okteto.net:7611</ReceiverURL>
             <!-- Authentication URL for the Data Publisher -->
-            <!-- <AuthURL>ssl://localhost:7711</AuthURL> -->
+            <!-- <AuthURL>ssl://wso2am-admhabits.cloud.okteto.net:7711</AuthURL> -->
             <Username>admin</Username>
             <Password>admin</Password>
             <!-- Path for Data Agent Configuration -->

@@ -56,7 +56,7 @@
             <definition type="RDBMS">
                 <configuration>
                     <driverClassName>com.mysql.jdbc.Driver</driverClassName>
-                    <url>jdbc:mysql://localhost/wso2_metrics</url>
+                    <url>jdbc:mysql://wso2am-admhabits.cloud.okteto.net/wso2_metrics</url>
                     <username>root</username>
                     <password>root</password>
                     <maxActive>50</maxActive>
@@ -82,7 +82,7 @@
             <definition type="RDBMS">
                 <configuration>
                     <driverClassName>net.sourceforge.jtds.jdbc.Driver</driverClassName>
-                    <url>jdbc:jtds:sqlserver://localhost:1433/wso2_metrics</url>
+                    <url>jdbc:jtds:sqlserver://wso2am-admhabits.cloud.okteto.net:1433/wso2_metrics</url>
                     <username>sa</username>
                     <password>sa</password>
                     <maxActive>200</maxActive>
@@ -110,7 +110,7 @@
                     <defaultAutoCommit>true</defaultAutoCommit>
                     <dataSourceClassName>com.microsoft.sqlserver.jdbc.SQLServerXADataSource</dataSourceClassName>
                     <dataSourceProps>
-                        <property name="URL">jdbc:sqlserver://localhost/SQLExpress:1433</property>
+                        <property name="URL">jdbc:sqlserver://wso2am-admhabits.cloud.okteto.net/SQLExpress:1433</property>
                         <property name="databaseName">wso2_metrics</property>
                         <property name="user">sa</property>
                         <property name="password">sa</property>
@@ -131,7 +131,7 @@
             <definition type="RDBMS">
                 <configuration>
                     <driverClassName>oracle.jdbc.OracleDriver</driverClassName>
-                    <url>jdbc:oracle:thin:@localhost:1521/wso2_metrics</url>
+                    <url>jdbc:oracle:thin:@wso2am-admhabits.cloud.okteto.net:1521/wso2_metrics</url>
                     <username>scott</username>
                     <password>tiger</password>
                     <maxActive>100</maxActive>

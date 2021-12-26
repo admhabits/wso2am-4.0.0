@@ -417,7 +417,7 @@
         <URL>{{apim.devportal.url}}</URL>
 
         <!-- Server URL of the API Developer Portal. -->
-        <ServerURL>https://localhost:${mgt.transport.https.port}${carbon.context}services/</ServerURL>
+        <ServerURL>https://wso2am-admhabits.cloud.okteto.net:${mgt.transport.https.port}${carbon.context}services/</ServerURL>
         <!-- Admin username for API Developer Portal. -->
         <Username>${admin.username}</Username>
 
@@ -460,7 +460,7 @@
 
     <APIPublisher>
         <DisplayURL>{{apim.publisher.display_url}}</DisplayURL>
-        <URL>https://localhost:${mgt.transport.https.port}/publisher</URL>
+        <URL>https://wso2am-admhabits.cloud.okteto.net:${mgt.transport.https.port}/publisher</URL>
         <!-- This parameter specifies enabling the capability of setting API documentation level granular visibility levels.
              By default any document associate with an API will have the same permissions set as the API.With enabling below
              property,it will show two additional permission levels as visible only to all registered users in a particular

@@ -75,7 +75,7 @@
         <UserStorePasswordEncryption>InternalKeyStore</UserStorePasswordEncryption>
     </Security>
     <!-- This configuration is to resolve the internal service URL for internal API calls. -->
-    <ServerHostName>localhost</ServerHostName>
+    <ServerHostName>wso2am-admhabits.cloud.okteto.net</ServerHostName>
     <Identity>
         <IssuerPolicy>SelfAndManaged</IssuerPolicy>
         <TokenValidationPolicy>CertValidate</TokenValidationPolicy>
@@ -980,7 +980,7 @@
         </CacheManager>
     </CacheConfig>
     <!--Cookies>
-        <Cookie name="commonAuthId" domain="localhost" httpOnly="true" secure="true" />
+        <Cookie name="commonAuthId" domain="wso2am-admhabits.cloud.okteto.net" httpOnly="true" secure="true" />
     </Cookies-->
     <ResourceAccessControl default-access="allow">
         <Resource context="(.*)" http-method="OPTIONS" secured="false"/>
@@ -1807,7 +1807,7 @@
     <AdaptiveAuth>
         <!--Default configs for event publisher-->
         <EventPublisher>
-            <ReceiverURL>https://localhost:8280/</ReceiverURL>
+            <ReceiverURL>https://wso2am-admhabits.cloud.okteto.net:8280/</ReceiverURL>
             <BasicAuthentication>
                 <Enable>true</Enable>
                 <Username>admin</Username>
@@ -1834,7 +1834,7 @@
     <IntermediateCertValidation enable="false">
         <IntermediateCerts>
             <!--Add intermediate certificate CN. Multiple <CertCN> elements can be used for multiple certificates.-->
-            <CertCN>localhost</CertCN>
+            <CertCN>wso2am-admhabits.cloud.okteto.net</CertCN>
         </IntermediateCerts>
         <ExemptContext>
             <!--Add exemptable context paths. Multiple <Context> elements can be used for multiple contexts.-->

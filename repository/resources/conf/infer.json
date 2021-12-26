@@ -541,7 +541,7 @@
   },
   "authentication.adaptive.event_publisher.authentication_type": {
     "basic": {
-      "authentication.adaptive.event_publisher.url": "https://localhost:8280/",
+      "authentication.adaptive.event_publisher.url": "https://wso2am-admhabits.cloud.okteto.net:8280/",
       "authentication.adaptive.event_publisher.authentication.basic.enable": true,
       "authentication.adaptive.event_publisher.authentication.basic.username": "admin",
       "authentication.adaptive.event_publisher.authentication.basic.password": "admin"

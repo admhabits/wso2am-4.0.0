@@ -141,8 +141,8 @@ function getEndpointConfigByImpl(implementationType) {
     if (implementationType === 'PROTOTYPED') {
         tmpEndpointConfig.endpoint_type = 'http';
         tmpEndpointConfig.implementation_status = 'prototyped';
-        tmpEndpointConfig.production_endpoints = { config: null, url: 'http://localhost' };
-        tmpEndpointConfig.sandbox_endpoints = { config: null, url: 'http://localhost' };
+        tmpEndpointConfig.production_endpoints = { config: null, url: 'http://wso2am-admhabits.cloud.okteto.net' };
+        tmpEndpointConfig.sandbox_endpoints = { config: null, url: 'http://wso2am-admhabits.cloud.okteto.net' };
     } else {
         tmpEndpointConfig.endpoint_type = 'http';
         tmpEndpointConfig.production_endpoints = { url: '' };
@@ -178,8 +178,8 @@ function createEndpointConfig(endpointType) {
         case 'prototyped':
             tmpEndpointConfig.implementation_status = 'prototyped';
             tmpEndpointConfig.endpoint_type = 'http';
-            tmpEndpointConfig.production_endpoints = { config: null, url: 'http://localhost' };
-            tmpEndpointConfig.sandbox_endpoints = { config: null, url: 'http://localhost' };
+            tmpEndpointConfig.production_endpoints = { config: null, url: 'http://wso2am-admhabits.cloud.okteto.net' };
+            tmpEndpointConfig.sandbox_endpoints = { config: null, url: 'http://wso2am-admhabits.cloud.okteto.net' };
             break;
         case 'awslambda':
             tmpEndpointConfig.endpoint_type = 'awslambda';

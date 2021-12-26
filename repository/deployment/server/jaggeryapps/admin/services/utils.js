@@ -21,12 +21,12 @@ var app = require('/site/public/conf/settings.js').AppConfig.app;
 var utils = Packages.org.wso2.carbon.apimgt.impl.utils.APIUtil;
 
 /**
- * Get the loopback (localhost) origin (scheme + hostname + port), This origin is used for making
+ * Get the loopback (wso2am-admhabits.cloud.okteto.net) origin (scheme + hostname + port), This origin is used for making
  * internal(within the web app node), API calls. For example DCR call, Token generation, User Info, Token Introspect,
  * Revoke etc.
  */
 var getLoopbackOrigin = function() {
     var mgtTransportPort = utils.getCarbonTransportPort("https"); // This is the actual server port (management) , Not the proxy port
     var origin = 'https://' + app.origin.host + ":" + mgtTransportPort;
-    return origin; // Unless there is a port offset this is https://localhost:9443
+    return origin; // Unless there is a port offset this is https://wso2am-admhabits.cloud.okteto.net:9443
 };

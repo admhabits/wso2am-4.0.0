@@ -85,7 +85,7 @@
     <!-- Resolve root used to resolve synapse references like schemas inside a WSDL -->
     <parameter name="SynapseConfig.ResolveRoot" locked="false">.</parameter>
     <!-- Synapse Server name parameter -->
-    <parameter name="SynapseConfig.ServerName" locked="false">localhost</parameter>
+    <parameter name="SynapseConfig.ServerName" locked="false">wso2am-admhabits.cloud.okteto.net</parameter>
 
     <!-- Configuration to include full Security Exception Message -->
     <parameter name="includeFullWSSecurityExceptionMessage" locked="false">true</parameter>
@@ -437,7 +437,7 @@
         -->
         <parameter name="membershipScheme">{{clustering.membership_scheme | default('multicast')}}</parameter>
         <!--<parameter name="licenseKey">xxx</parameter>-->
-        <!--<parameter name="mgtCenterURL">http://localhost:8081/mancenter/</parameter>-->
+        <!--<parameter name="mgtCenterURL">http://wso2am-admhabits.cloud.okteto.net:8081/mancenter/</parameter>-->
 
         <!--
          The clustering domain/group. Nodes in the same group will belong to the same multicast
@@ -540,7 +540,7 @@
     -->
     <!--<transaction timeout="30000">
         <parameter name="java.naming.factory.initial">org.apache.activemq.jndi.ActiveMQInitialContextFactory</parameter>
-        <parameter name="java.naming.provider.url">tcp://localhost:61616</parameter>
+        <parameter name="java.naming.provider.url">tcp://wso2am-admhabits.cloud.okteto.net:61616</parameter>
         <parameter name="UserTransactionJNDIName">UserTransaction</parameter>
         <parameter name="TransactionManagerJNDIName">TransactionManager</parameter>
     </transaction>-->

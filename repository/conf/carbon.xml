@@ -759,8 +759,8 @@
 	
 	<!--ExternalAPIManager>
 
-		<APIGatewayURL>http://localhost:8281</APIGatewayURL>
-		<APIPublisherURL>http://localhost:8281/publisher</APIPublisherURL>
+		<APIGatewayURL>http://wso2am-admhabits.cloud.okteto.net:8281</APIGatewayURL>
+		<APIPublisherURL>http://wso2am-admhabits.cloud.okteto.net:8281/publisher</APIPublisherURL>
 
 	</ExternalAPIManager-->
 	

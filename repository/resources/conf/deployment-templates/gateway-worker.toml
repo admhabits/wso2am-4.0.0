@@ -72,7 +72,7 @@ traffic_manager_auth_urls=["ssl://tm2.local:9711"]
 
 [apim.analytics]
 enable = false
-config_endpoint = "https://localhost:8080/auth/v1"
+config_endpoint = "https://wso2am-admhabits.cloud.okteto.net:8080/auth/v1"
 auth_token = ""
 
 # Caches

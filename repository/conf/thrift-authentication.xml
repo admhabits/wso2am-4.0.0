@@ -35,7 +35,7 @@
 
     <ClientTimeout>30000</ClientTimeout>
 
-    <!--<Hostname>localhost</Hostname>-->
+    <!--<Hostname>wso2am-admhabits.cloud.okteto.net</Hostname>-->
     <Port>10711</Port>
 
     <!--30 min-->

@@ -71,7 +71,7 @@
  	    -->
         <!--UserStoreManager class="org.wso2.carbon.user.core.ldap.UniqueIDReadOnlyLDAPUserStoreManager">
             <Property name="TenantManager">org.wso2.carbon.user.core.tenant.CommonHybridLDAPTenantManager</Property>
-            <Property name="ConnectionURL">ldap://localhost:10389</Property>
+            <Property name="ConnectionURL">ldap://wso2am-admhabits.cloud.okteto.net:10389</Property>
             <Property name="ConnectionName">uid=admin,ou=system</Property>
             <Property name="ConnectionPassword">admin</Property>
             <Property name="AnonymousBind">false</Property>
@@ -175,7 +175,7 @@
         -->
         <!--ISUserStoreManager class="org.wso2.carbon.user.core.ldap.UniqueIDReadWriteLDAPUserStoreManager">
             <Property name="TenantManager">org.wso2.carbon.user.core.tenant.CommonHybridLDAPTenantManager</Property>
-            <Property name="ConnectionURL">ldap://localhost:${Ports.EmbeddedLDAP.LDAPServerPort}</Property>
+            <Property name="ConnectionURL">ldap://wso2am-admhabits.cloud.okteto.net:${Ports.EmbeddedLDAP.LDAPServerPort}</Property>
             <Property name="ConnectionName">uid=admin,ou=system</Property>
             <Property name="ConnectionPassword">admin</Property>
             <Property name="AnonymousBind">false</Property>

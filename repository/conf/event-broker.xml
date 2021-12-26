@@ -35,7 +35,7 @@ broker compoent and parameters.
                          class="org.wso2.carbon.event.core.internal.delivery.jms.QpidJMSDeliveryManagerFactory"
                          type="local"> -->
            <!--  <remoteMessageBroker>
-                <hostName>localhost</hostName>
+                <hostName>wso2am-admhabits.cloud.okteto.net</hostName>
                 <servicePort>9443</servicePort>
                 <webContext>/</webContext>
                 <userName>admin</userName>

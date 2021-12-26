@@ -6,7 +6,7 @@
    <send>
       <endpoint>
          <http method="GET"
-               uri-template="ws://localhost:9763/example/websocket/chat"/>
+               uri-template="ws://wso2am-admhabits.cloud.okteto.net:9763/example/websocket/chat"/>
       </endpoint>
    </send>
 </sequence>

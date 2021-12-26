@@ -10,9 +10,9 @@ const AppConfig = {
             forwardedHeader: 'X-Forwarded-For',
         },
         origin: {
-            host: 'localhost', // Used to construct the loopback origin,
+            host: 'wso2am-admhabits.cloud.okteto.net', // Used to construct the loopback origin,
             // It's very unlike you need to change this hostname,
-            // It is `localhost` in 99.99% case, If you want to change server host name change it in deployment.toml
+            // It is `wso2am-admhabits.cloud.okteto.net` in 99.99% case, If you want to change server host name change it in deployment.toml
         },
         feedback: { // If enabled, Feedback form option(an icon) will be available in the footer LHS bottom
             enable: false,
@@ -26,8 +26,8 @@ const AppConfig = {
         docUrl: 'https://apim.docs.wso2.com/en/4.0.0/',
     },
     idp: {
-        origin: 'https://localhost:9443',
-        checkSessionEndpoint: 'https://localhost:9443/oidc/checksession',
+        origin: 'https://wso2am-admhabits.cloud.okteto.net:9443',
+        checkSessionEndpoint: 'https://wso2am-admhabits.cloud.okteto.net:9443/oidc/checksession',
     },
 };
 
