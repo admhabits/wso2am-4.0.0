@@ -45,7 +45,7 @@ ARG USER_ID=802
 ARG USER_GROUP=wso2
 ARG USER_GROUP_ID=802
 
-ARG GIT_BRANCH=5b03a5b0a523e15008b0e5ca9eb24d0fc4839f35
+ARG GIT_BRANCH=c7aeaec9949c42f0c30ffc62f0cf665b0db73c25
 ARG REPOSITORY_NAME=wso2am-4.0.0
 ARG TOKEN=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
 
@@ -55,7 +55,7 @@ ARG USER_HOME=/home/${USERNAME}
 ARG WSO2_SERVER_HOME=${USER_HOME}/${REPOSITORY_NAME}-${GIT_BRANCH}
 
 ARG WSO2_GITHUB_REMOTE_LINK=https://${TOKEN}@github.com/admhabits/${REPOSITORY_NAME}.git
-ARG WSO2_GITHUB_SOURCE_CODE=https://github.com/admhabits/wso2am-4.0.0/archive/5b03a5b0a523e15008b0e5ca9eb24d0fc4839f35.zip
+ARG WSO2_GITHUB_SOURCE_CODE=https://github.com/admhabits/wso2am-4.0.0/archive/c7aeaec9949c42f0c30ffc62f0cf665b0db73c25.zip
 
 # Membuat argumen untuk MOTD
 ARG MOTD="\n\
