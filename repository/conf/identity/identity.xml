@@ -442,7 +442,7 @@
                 Default value for IDTokenIssuerID, is OAuth2TokenEPUrl.
                 If that doesn't satisfy uncomment the following config and explicitly configure the value
             -->
-            <IDTokenIssuerID>https://localhost:9443/oauth2/token</IDTokenIssuerID>
+            <IDTokenIssuerID>https://wso2am-admhabits.cloud.okteto.net/oauth2/token</IDTokenIssuerID>
             <IDTokenCustomClaimsCallBackHandler>org.wso2.carbon.identity.openidconnect.SAMLAssertionClaimsCallback</IDTokenCustomClaimsCallBackHandler>
             <IDTokenExpiration>3600</IDTokenExpiration>
             <UserInfoJWTSignatureAlgorithm>SHA256withRSA</UserInfoJWTSignatureAlgorithm>
