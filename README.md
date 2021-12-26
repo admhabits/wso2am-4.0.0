@@ -22,7 +22,7 @@ Prasyarat Memulai :
   Terminal :
   
   RUN  $ git clone https://github.com/admhabits/generate-wso2-apim.git
-  RUN  $ git checkout branch deploy
+  RUN  $ git checkout branch setup
     
 ```
 
