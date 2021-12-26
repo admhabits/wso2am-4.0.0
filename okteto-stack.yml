@@ -39,6 +39,8 @@ services:
       - "8280:8280"
       - "8243:8243"
       - "8080:8080"
+      - "9021:9021"
+      - "8021:8021"
     annotations:
       # dev.okteto.com/auto-ingress: "apim"
       # nginx.ingress.kubernetes.io/backend-protocol: HTTPS
@@ -51,3 +53,7 @@ endpoints:
   - path: /
     service: wso2am
     port: 8080
+  websub:
+  - path: /
+    service: wso2am
+    port: 9020
