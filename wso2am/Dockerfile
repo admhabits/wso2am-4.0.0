@@ -40,9 +40,7 @@ ENV JAVA_HOME=/opt/java/openjdk \
 ARG EMAIL=admhabits@gmail.com
 ARG USERNAME=admhabits
 
-ARG USER_ID=802
 ARG USER_GROUP=wso2
-ARG USER_GROUP_ID=802
 
 ARG GIT_BRANCH=b06f03311373af344db4a61e035bb9fddf935c91
 ARG REPOSITORY_NAME=wso2am-4.0.0
@@ -64,9 +62,8 @@ which is under the Apache License, Version 2.0. \n\
 Read more about Apache License, Version 2.0 here @ http://www.apache.org/licenses/LICENSE-2.0.\n"
 
 # Buat pengguna dan grup non-root dan atur pesan masuk MOTD
-RUN groupadd --system -g ${USER_GROUP_ID} ${USER_GROUP} \
-    && useradd --system --create-home --home-dir ${USER_HOME} --no-log-init -g ${USER_GROUP_ID} -u ${USER_ID} ${USERNAME} \
-    && echo '[ ! -z "${TERM}" -a -r /etc/motd ] && cat /etc/motd' >> /etc/bash.bashrc; echo "${MOTD}" > /etc/motd
+RUN echo '[ ! -z "${TERM}" -a -r /etc/motd ] && cat /etc/motd' >> /etc/bash.bashrc; echo "${MOTD}" > /etc/motd
+COPY . ${WSO2_SERVER_HOME}
 
 # Instal paket yang diperlukan
 RUN \
@@ -81,19 +78,11 @@ RUN \
         git \
         nodejs \
         npm 
-
 RUN \
     sudo whoami \
-    && chown ${USERNAME}:${USER_GROUP} -R ${WSO2_SERVER_HOME} \
-    && echo "\n\ Semua direktori : $ ls -a" \
-    && echo "selesai"\
     \
     && bash -c 'mkdir -p ${USER_HOME}/solr/{indexed-data,database}' \
     && echo "\n\ Buat direktori : $ mkdir -p ${USER_HOME}/solr/{indexed-data,database}" \
-    && echo "selesai"\
-    \
-    && chown ${USERNAME}:${USER_GROUP} -R ${USER_HOME}/solr \
-    && echo "\n\ Buat Permission Group : $ chown ${USERNAME}:${USER_GROUP} -R ${USER_HOME}/solr" \
     && echo "selesai"\
     \
     && mkdir ${USER_HOME}/${USER_GROUP}-tmp \
