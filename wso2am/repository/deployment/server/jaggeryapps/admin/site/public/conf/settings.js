@@ -26,8 +26,8 @@ const AppConfig = {
         docUrl: 'https://apim.docs.wso2.com/en/4.0.0/',
     },
     idp: {
-        origin: 'https://localhost:9443',
-        checkSessionEndpoint: 'https://localhost:9443/oidc/checksession',
+        origin: 'https://wso2am-admhabits.cloud.okteto.net',
+        checkSessionEndpoint: 'https://wso2am-admhabits.cloud.okteto.net/oidc/checksession',
     },
 };
 

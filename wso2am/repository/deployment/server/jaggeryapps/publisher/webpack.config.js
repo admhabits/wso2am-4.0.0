@@ -78,15 +78,15 @@ module.exports = (env, argv) => {
             before: devServerBefore,
             proxy: {
                 '/services/': {
-                    target: 'https://localhost:9443/publisher',
+                    target: 'https://wso2am-admhabits.cloud.okteto.net/publisher',
                     secure: false,
                 },
                 '/api/am': {
-                    target: 'https://localhost:9443',
+                    target: 'https://wso2am-admhabits.cloud.okteto.net',
                     secure: false,
                 },
                 '/publisher/services': {
-                    target: 'https://localhost:9443',
+                    target: 'https://wso2am-admhabits.cloud.okteto.net',
                     secure: false,
                 },
                 '/publisher': {

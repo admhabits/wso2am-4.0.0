@@ -28,7 +28,7 @@ function oauthAppCache(data) {
  *
  */
 async function getSettings() {
-    const res = await fetch('https://localhost:9443/api/am/admin/v2/settings', { agent });
+    const res = await fetch('https://wso2am-admhabits.cloud.okteto.net/api/am/admin/v2/settings', { agent });
     const data = await res.json();
     return data;
 }
@@ -44,7 +44,7 @@ async function generateToken(code, keys) {
         code,
         redirect_uri: callbackUrl,
     });
-    const tokenEndpoint = 'https://localhost:9443/oauth2/token';
+    const tokenEndpoint = 'https://wso2am-admhabits.cloud.okteto.net/oauth2/token';
     const response = await fetch(tokenEndpoint, {
         method: 'post',
         body: tokenRequestData,
@@ -71,7 +71,7 @@ async function doDCR() {
         grantType: 'authorization_code refresh_token',
         saasApp: true,
     };
-    const dcrURL = 'https://localhost:9443/client-registration/v0.17/register';
+    const dcrURL = 'https://wso2am-admhabits.cloud.okteto.net/client-registration/v0.17/register';
     const response = await fetch(dcrURL, {
         method: 'post',
         body: JSON.stringify(dcrRequestData),
@@ -113,7 +113,7 @@ function devServerBefore(app, server, compiler) {
             + clientId + '&scope=' + scopes.join(' ') + ' service_catalog:service_view service_catalog:service_write'
             + '&redirect_uri=' + callbackUrl;
 
-        const location = 'https://localhost:9443/oauth2/authorize' + authRequestParams;
+        const location = 'https://wso2am-admhabits.cloud.okteto.net/oauth2/authorize' + authRequestParams;
 
         res.redirect(location);
     });

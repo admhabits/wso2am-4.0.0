@@ -50,4 +50,4 @@ endpoints:
   auth:
   - path: /
     service: wso2am
-    port: 8080
+    port: 8081

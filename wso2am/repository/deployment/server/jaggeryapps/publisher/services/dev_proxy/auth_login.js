@@ -9,7 +9,7 @@ const path = require('path');
 const agent = new https.Agent({
     rejectUnauthorized: false,
 });
-const callbackUrl = 'https://localhost:8081/publisher/services/auth/callback/login';
+const callbackUrl = 'https://auth-admhabits.cloud.okteto.net/publisher/services/auth/callback/login';
 
 /**
  *
