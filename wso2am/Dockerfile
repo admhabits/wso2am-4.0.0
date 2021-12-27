@@ -120,4 +120,4 @@ ENV WORKING_DIRECTORY=${USER_HOME} \
 EXPOSE 9763 9443 9999 11111 8280 8243 5672 9711 9611 9099
 
 # mulai wadah(container) dan mulai server Karbon WSO2
-ENTRYPOINT ["/home/admhabits/docker-entrypoint.sh"]
+ENTRYPOINT ["/home/admhabits/wso2am/docker-entrypoint.sh"]
