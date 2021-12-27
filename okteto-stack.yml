@@ -39,6 +39,7 @@ services:
       - "8280:8280"
       - "8243:8243"
       - "8080:8080"
+      - "8081:8081"
     annotations:
       # dev.okteto.com/auto-ingress: "apim"
       # nginx.ingress.kubernetes.io/backend-protocol: HTTPS
