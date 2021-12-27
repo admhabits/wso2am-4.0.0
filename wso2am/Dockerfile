@@ -105,10 +105,10 @@ RUN \
     && cd ${WSO2_SERVER_HOME}/repository/deployment/server/jaggeryapps \
     && echo "\n\ ===== npm install && npm run bootstrap =====" \
     && npm install && npm run bootstrap \
-    && echo "\n\ ===== npm run build:prod =====" \
-    && cd admin && npm run build:prod && cd .. \
-    && cd publisher && npm run build:prod && cd ..\
-    && cd devportal && npm run build:prod && cd ..\
+    # && echo "\n\ ===== npm run build:prod =====" \
+    # && cd admin && npm run build:prod && cd .. \
+    # && cd publisher && npm run build:prod && cd ..\
+    # && cd devportal && npm run build:prod && cd ..\
     && ls && echo "\n"\
     \
     && ls && echo "\n" \
