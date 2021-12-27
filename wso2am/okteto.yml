@@ -1,8 +1,7 @@
 name: wso2am
 command: bash
-workdir: /home/admhabits/wso2am
+workdir: /okteto
 sync:
-- .:/home/admhabits/wso2am
+- .:/okteto
 forward:
 - 9443:9443
-autocreate: true
