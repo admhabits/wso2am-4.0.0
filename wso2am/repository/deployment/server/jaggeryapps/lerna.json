@@ -1,7 +1,8 @@
 {
   "packages": [
     "publisher",
-    "devportal"
+    "devportal",
+    "admin"
   ],
   "version": "0.0.0"
 }
