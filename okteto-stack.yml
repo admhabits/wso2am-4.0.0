@@ -53,7 +53,7 @@ endpoints:
     service: wso2am
     port: 9443
   oauth:
-  - path: /oauth2/authorize
+  - path: /oauth2
     service: wso2am
     port: 9443
   oidc:
