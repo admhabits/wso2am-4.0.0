@@ -87,15 +87,15 @@ module.exports = function (env, argv) {
             before: devServerBefore,
             proxy: {
                 '/services/': {
-                    target: 'https://wso2am-admhabits.cloud.okteto.net/devportal',
+                    target: 'https://localhost:9443/devportal',
                     secure: false,
                 },
                 '/api/am': {
-                    target: 'https://wso2am-admhabits.cloud.okteto.net',
+                    target: 'https://localhost:9443',
                     secure: false,
                 },
                 '/devportal/services': {
-                    target: 'https://wso2am-admhabits.cloud.okteto.net',
+                    target: 'https://localhost:9443',
                     secure: false,
                 },
                 '/devportal': {

@@ -104,9 +104,9 @@
             https://<HostName>:<MgtTrpProxyPort except 443>/<ProxyContextPath>/<context>
             If above format doesn't satisfy uncomment the following configs and explicitly configure the values
          -->
-        <OpenIDServerUrl>${carbon.protocol}://${carbon.host}/openidserver</OpenIDServerUrl>
-        <OpenIDUserPattern>${carbon.protocol}://${carbon.host}/openid</OpenIDUserPattern>
-        <OpenIDLoginUrl>${carbon.protocol}://${carbon.host}/authenticationendpoint/openid_login.do</OpenIDLoginUrl>
+        <OpenIDServerUrl>${carbon.protocol}://${carbon.host}:${carbon.management.port}/openidserver</OpenIDServerUrl>
+        <OpenIDUserPattern>${carbon.protocol}://${carbon.host}:${carbon.management.port}/openid</OpenIDUserPattern>
+        <OpenIDLoginUrl>${carbon.protocol}://${carbon.host}:${carbon.management.port}/authenticationendpoint/openid_login.do</OpenIDLoginUrl>
         <!-- If the users must be prompted for approval -->
         <OpenIDSkipUserConsent>false</OpenIDSkipUserConsent>
         <!-- Expiry time of the OpenID RememberMe token in minutes -->

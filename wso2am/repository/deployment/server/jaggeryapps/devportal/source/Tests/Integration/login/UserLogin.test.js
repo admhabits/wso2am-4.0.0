@@ -32,7 +32,7 @@ describe(
         beforeEach(async () => {
             await page._client.send('Network.clearBrowserCookies');
             await page._client.send('Network.clearBrowserCache');
-            await page.goto('https://wso2am-admhabits.cloud.okteto.net/publisher');
+            await page.goto('https://localhost:9443/publisher');
         });
 
         afterAll(async () => {

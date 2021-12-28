@@ -6,7 +6,7 @@
     "scripts": {
         "test": "jest",
         "test:coverage": "jest --coverage",
-        "build:prod": "rm -R site/public/dist/; NODE_ENV=production NODE_OPTIONS=--max_old_space_size=4096 webpack --mode production --stats=errors-only",
+        "build:prod": "rm -R site/public/dist/; npm rum i18n && NODE_ENV=production NODE_OPTIONS=--max_old_space_size=4096 webpack --mode production --stats=errors-only",
         "build:dev": "rm -R site/public/dist/; NODE_ENV=development webpack --mode development --watch ",
         "analysis": "NODE_ENV=analysis NODE_OPTIONS=--max_old_space_size=8172 webpack --mode production --progress",
         "lint": "eslint source",
