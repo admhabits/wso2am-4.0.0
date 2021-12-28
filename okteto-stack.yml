@@ -49,6 +49,6 @@ endpoints:
     service: wso2am
     port: 9443
   auth:
-  - path: /
+  - path: /oauth2/authorize
     service: wso2am
-    port: 8081
+    port: 9443
