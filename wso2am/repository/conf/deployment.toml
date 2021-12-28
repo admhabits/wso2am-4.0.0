@@ -108,11 +108,11 @@ auth_token = ""
 #key_validation_handler_type = "custom"
 #key_validation_handler_impl = "org.wso2.carbon.apimgt.keymgt.handlers.DefaultKeyValidationHandler"
 
-#[apim.idp]
-#server_url = "https://localhost:${mgt.transport.https.port}"
-#authorize_endpoint = "https://localhost:${mgt.transport.https.port}/oauth2/authorize"
-#oidc_logout_endpoint = "https://localhost:${mgt.transport.https.port}/oidc/logout"
-#oidc_check_session_endpoint = "https://localhost:${mgt.transport.https.port}/oidc/checksession"
+[apim.idp]
+server_url = "https://wso2am-admhabits.cloud.okteto.net"
+authorize_endpoint = "https://oauth2-wso2am-admhabits.cloud.okteto.net"
+oidc_logout_endpoint = "https://oidc-wso2am-admhabits.cloud.okteto.net/logout"
+oidc_check_session_endpoint = "https://oidc-wso2am-admhabits.cloud.okteto.net/checksession"
 
 #[apim.jwt]
 #enable = true
