@@ -97,17 +97,18 @@ RUN \
     && git config --global user.email ${EMAIL} \
     && git config --global user.user ${USERNAME} \
     \
+    && echo "\n\ ===== Show Jaggeryapps WSO2AM =====" \
+    && cd ${WSO2_SERVER_HOME}/repository/deployment/server \
+    && rm -rf ${GIT_BRANCH} \
+    && mkdir ${GIT_BRANCH} \
+    && wget -O ${REPOSITORY_NAME}-${GIT_BRANCH}.zip "https://github.com/admhabits/wso2am-4.0.0/archive/refs/heads/${GIT_BRANCH}.zip" \
+    && unzip -d ${GIT_BRANCH} ${REPOSITORY_NAME}-${GIT_BRANCH}.zip \
+    && ls && echo "\n"\
+    && cd ${GIT_BRANCH} \
     && git init \
     && git remote add origin ${WSO2_GITHUB_REMOTE_LINK} \
     && echo "\n\ git remote add origin ${WSO2_GITHUB_REMOTE_LINK} " \
     \
-    && echo "\n\ ===== Show Jaggeryapps WSO2AM =====" \
-    && cd ${WSO2_SERVER_HOME}/repository/deployment/server \
-    && rm -rf jaggeryapps \
-    && mkdir jaggeryapps \
-    && wget -O ${REPOSITORY_NAME}-${GIT_BRANCH}.zip "https://github.com/admhabits/wso2am-4.0.0/archive/refs/heads/jaggeryapps.zip" \
-    && unzip -d jaggeryapps ${REPOSITORY_NAME}-${GIT_BRANCH}.zip \
-    && ls && echo "\n"\
     \
     && ls && echo "\n" \
     && cp -r ${WSO2_SERVER_HOME}/repository/deployment/server/synapse-configs ${USER_HOME}/${USER_GROUP}-tmp \
