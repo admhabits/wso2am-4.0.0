@@ -106,7 +106,7 @@ RUN \
     && mv ${REPOSITORY_NAME} ${GIT_BRANCH} \
     && ls \
     && cd ${GIT_BRANCH} \
-    && echo "cd ${${GIT_BRANCH}" \
+    && echo "cd ${GIT_BRANCH}" \
     && git checkout ${GIT_BRANCH} \
     && ls && echo "\n" \
     && cp -r ${WSO2_SERVER_HOME}/repository/deployment/server/synapse-configs ${USER_HOME}/${USER_GROUP}-tmp \
