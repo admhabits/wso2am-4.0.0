@@ -67,7 +67,7 @@ RUN \
     && echo "\n\ git clone ${WSO2_GITHUB_REMOTE_LINK} " \
     \
     && echo "\n\ ===== Inisialisasi Jaggeryapps WSO2AM =====" \
-    && cd ${USER_HOME}/wsp2am-4.0.0-jaggeryapps \
+    && cd ${USER_HOME}/${GIT_BRANCH} \
     && echo "\n\ ===== npm install && npm run bootstrap =====" \
     && npm install -g lerna && npm install  && npm run bootstrap \
     # && echo "\n\ ===== npm run build:prod =====" \
