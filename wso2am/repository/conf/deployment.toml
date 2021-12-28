@@ -1,5 +1,5 @@
 [server]
-hostname = "https://wso2am-admhabits.cloud.okteto.net"
+hostname = "wso2am-admhabits.cloud.okteto.net"
 #offset=0
 base_path = "https://wso2am-admhabits.cloud.okteto.net"
 #discard_empty_caches = false
@@ -98,10 +98,10 @@ enable = false
 config_endpoint = "https://localhost:8080/auth/v1"
 auth_token = ""
 
-#[apim.key_manager]
-#service_url = "https://localhost:${mgt.transport.https.port}/services/"
-#username = "$ref{super_admin.username}"
-#password = "$ref{super_admin.password}"
+[apim.key_manager]
+service_url = "https://wso2am-admhabits.cloud.okteto.net/services/"
+# username = "$ref{super_admin.username}"
+# password = "$ref{super_admin.password}"
 #pool.init_idle_capacity = 50
 #pool.max_idle = 100
 #key_validation_handler_type = "default"
@@ -113,6 +113,11 @@ server_url = "https://wso2am-admhabits.cloud.okteto.net"
 authorize_endpoint = "https://wso2am-admhabits.cloud.okteto.net/oauth2/authorize"
 oidc_logout_endpoint = "https://wso2am-admhabits.cloud.okteto.net/oidc/logout"
 oidc_check_session_endpoint = "https://wso2am-admhabits.cloud.okteto.net/oidc/checksession"
+
+[apim.publisher]
+server_url = "https://wso2am-admhabits.cloud.okteto.net/publisher"
+username = "admin"
+password = "admin"
 
 #[apim.jwt]
 #enable = true
