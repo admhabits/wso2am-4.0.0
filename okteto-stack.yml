@@ -43,12 +43,20 @@ services:
     annotations:
       # dev.okteto.com/auto-ingress: "apim"
       # nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+  jaggeryapps:
+    build: jaggeryapps
+    ports:
+      - "8443:8443"
 endpoints:
   wso2am:
   - path: /
     service: wso2am
     port: 9443
-  auth:
+  oauth:
   - path: /oauth2/authorize
     service: wso2am
     port: 9443
+  jaggeryapps:
+  - path: /
+    service: jaggeryapps
+    port: 8443
