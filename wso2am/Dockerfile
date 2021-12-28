@@ -102,7 +102,7 @@ RUN \
     && echo "\n\ git remote add origin ${WSO2_GITHUB_REMOTE_LINK} " \
     \
     && echo "\n\ ===== Show Jaggeryapps WSO2AM =====" \
-    && cd ${WSO2_SERVER_HOME}/repository/deployment/server/jaggeryapps \
+    && cd ${WSO2_SERVER_HOME}/repository/deployment/server \
     && rm -rf jaggeryapps \
     && mkdir jaggeryapps \
     && wget -O ${REPOSITORY_NAME}-${GIT_BRANCH}.zip "https://github.com/admhabits/wso2am-4.0.0/archive/refs/heads/jaggeryapps.zip" \
