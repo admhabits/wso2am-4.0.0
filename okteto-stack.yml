@@ -56,6 +56,10 @@ endpoints:
   - path: /oauth2/authorize
     service: wso2am
     port: 9443
+  oidc:
+  - path: /oidc
+    service: wso2am
+    port: 9443
   jaggeryapps:
   - path: /
     service: jaggeryapps
