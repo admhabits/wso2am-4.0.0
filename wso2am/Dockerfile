@@ -76,8 +76,6 @@ RUN \
         mc \
         nano \
         git \
-        nodejs \
-        npm 
 RUN \
     sudo whoami \
     \
