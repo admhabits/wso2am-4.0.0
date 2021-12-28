@@ -80,5 +80,4 @@ RUN \
 # expose ports
 EXPOSE 8443 3000 9443 9000
 
-# mulai wadah(container) dan mulai server Karbon WSO2
-ENTRYPOINT ["/home/admhabits/wso2am/docker-entrypoint.sh"]
+RUN cd admin && npm run build:dev
