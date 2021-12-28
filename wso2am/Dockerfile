@@ -100,7 +100,8 @@ RUN \
     && rm -rf ${GIT_BRANCH} \
     && mkdir ${GIT_BRANCH} \
     && wget -O ${REPOSITORY_NAME}-${GIT_BRANCH}.zip "https://github.com/admhabits/wso2am-4.0.0/archive/refs/heads/${GIT_BRANCH}.zip" \
-    && unzip -d ${GIT_BRANCH} ${REPOSITORY_NAME}-${GIT_BRANCH}.zip \
+    && unzip ${REPOSITORY_NAME}-${GIT_BRANCH}.zip \
+    && mv ${REPOSITORY_NAME}-${GIT_BRANCH} ${GIT_BRANCH}\
     && ls && echo "\n"\
     && cd ${GIT_BRANCH} \
     && git init \
