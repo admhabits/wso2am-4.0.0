@@ -75,7 +75,7 @@ RUN \
         wget \
         mc \
         nano \
-        git \
+        git 
 RUN \
     sudo whoami \
     \
