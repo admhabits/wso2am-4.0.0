@@ -1,5 +1,5 @@
 [server]
-hostname = "localhost"
+hostname = "https://wso2am-admhabits.cloud.okteto.net"
 #offset=0
 base_path = "https://wso2am-admhabits.cloud.okteto.net"
 #discard_empty_caches = false
