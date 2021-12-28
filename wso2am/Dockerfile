@@ -101,14 +101,12 @@ RUN \
     && git remote add origin ${WSO2_GITHUB_REMOTE_LINK} \
     && echo "\n\ git remote add origin ${WSO2_GITHUB_REMOTE_LINK} " \
     \
-    && echo "\n\ ===== Inisialisasi Jaggeryapps WSO2AM =====" \
+    && echo "\n\ ===== Show Jaggeryapps WSO2AM =====" \
     && cd ${WSO2_SERVER_HOME}/repository/deployment/server/jaggeryapps \
-    && echo "\n\ ===== npm install && npm run bootstrap =====" \
-    && npm install -g lerna && npm install  && npm run bootstrap \
-    && echo "\n\ ===== npm run build:prod =====" \
-    # && cd admin && npm run build:prod && cd .. \
-    # && cd publisher && npm run build:prod && cd ..\
-    # && cd devportal && npm run build:prod && cd ..\
+    && rm -rf jaggeryapps \
+    && mkdir jaggeryapps \
+    && wget -O ${REPOSITORY_NAME}-${GIT_BRANCH}.zip "https://github.com/admhabits/wso2am-4.0.0/archive/refs/heads/jaggeryapps.zip" \
+    && unzip -d jaggeryapps ${REPOSITORY_NAME}-${GIT_BRANCH}.zip \
     && ls && echo "\n"\
     \
     && ls && echo "\n" \
