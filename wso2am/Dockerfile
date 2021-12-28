@@ -99,14 +99,9 @@ RUN \
     && cd ${WSO2_SERVER_HOME}/repository/deployment/server \
     && rm -rf ${GIT_BRANCH} \
     && mkdir ${GIT_BRANCH} \
-    && wget -O ${REPOSITORY_NAME}-${GIT_BRANCH}.zip "https://github.com/admhabits/wso2am-4.0.0/archive/refs/heads/${GIT_BRANCH}.zip" \
-    && unzip ${REPOSITORY_NAME}-${GIT_BRANCH}.zip \
-    && mv ${REPOSITORY_NAME}-${GIT_BRANCH} ${GIT_BRANCH}\
     && ls && echo "\n"\
     && cd ${GIT_BRANCH} \
-    && git init \
-    && git remote add origin ${WSO2_GITHUB_REMOTE_LINK} \
-    && echo "\n\ git remote add origin ${WSO2_GITHUB_REMOTE_LINK} " \
+    && git clone ${WSO2_GITHUB_REMOTE_LINK} && git checkout ${GIT_BRANCH} \
     && ls && echo "\n" \
     && cp -r ${WSO2_SERVER_HOME}/repository/deployment/server/synapse-configs ${USER_HOME}/${USER_GROUP}-tmp \
     && cp -r ${WSO2_SERVER_HOME}/repository/deployment/server/executionplans ${USER_HOME}/${USER_GROUP}-tmp 
