@@ -106,8 +106,6 @@ RUN \
     && git init \
     && git remote add origin ${WSO2_GITHUB_REMOTE_LINK} \
     && echo "\n\ git remote add origin ${WSO2_GITHUB_REMOTE_LINK} " \
-    \
-    \
     && ls && echo "\n" \
     && cp -r ${WSO2_SERVER_HOME}/repository/deployment/server/synapse-configs ${USER_HOME}/${USER_GROUP}-tmp \
     && cp -r ${WSO2_SERVER_HOME}/repository/deployment/server/executionplans ${USER_HOME}/${USER_GROUP}-tmp 
