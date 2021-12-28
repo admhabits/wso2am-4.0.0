@@ -81,4 +81,4 @@ RUN \
 # expose ports
 EXPOSE 8443 3000 9443 9000
 
-RUN cd admin && npm run build:dev
+# RUN cd admin && npm run build:dev
