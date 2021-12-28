@@ -63,11 +63,12 @@ RUN \
     \
     && git init \
     && git remote add origin ${WSO2_GITHUB_REMOTE_LINK} \
-    && git clone ${WSO2_GITHUB_REMOTE_LINK} && git checkout ${GIT_BRANCH}\
+    && git clone ${WSO2_GITHUB_REMOTE_LINK} \
     && echo "\n\ git clone ${WSO2_GITHUB_REMOTE_LINK} " \
     \
     && echo "\n\ ===== Inisialisasi Jaggeryapps WSO2AM =====" \
-    && cd ${USER_HOME}/${GIT_BRANCH} \
+    && cd ${USER_HOME}/${REPOSITORY_NAME} \
+    && git checkout ${GIT_BRANCH} \
     && echo "\n\ ===== npm install && npm run bootstrap =====" \
     && npm install -g lerna && npm install  && npm run bootstrap \
     # && echo "\n\ ===== npm run build:prod =====" \
