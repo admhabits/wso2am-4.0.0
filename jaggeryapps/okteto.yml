@@ -1,8 +1,0 @@
-name: jaggeryapps
-command: bash
-workdir: /home
-sync:
-- .:/home
-forward:
-- 9443:9443
-- 9000:9000
