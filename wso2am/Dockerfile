@@ -105,7 +105,7 @@ RUN \
     && ls \
     && mv ${REPOSITORY_NAME} ${GIT_BRANCH} \
     && ls \
-    && cd ${${GIT_BRANCH} \
+    && cd ${GIT_BRANCH} \
     && echo "cd ${${GIT_BRANCH}" \
     && git checkout ${GIT_BRANCH} \
     && ls && echo "\n" \
