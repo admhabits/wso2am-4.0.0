@@ -1,5 +1,5 @@
 [server]
-hostname = "wso2am"
+hostname = "wso2am-admhabits.cloud.okteto.net"
 #offset=0
 base_path = "${carbon.protocol}://${carbon.host}:${carbon.management.port}"
 #discard_empty_caches = false
@@ -249,3 +249,6 @@ notification_endpoint = "https://localhost:${mgt.transport.https.port}/internal/
 username = "${admin.username}"
 password = "${admin.password}"
 'header.X-WSO2-KEY-MANAGER' = "default"
+
+[transport.https.properties]
+proxyPort = 443
