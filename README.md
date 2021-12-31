@@ -5,6 +5,7 @@ Prasyarat Memulai :
 - **OKTETO CLI**.
 - **Docker Compose**.
 - **Kubernetes**
+- **Visual Studio Code**
 
 ## Tutorial
 
@@ -21,8 +22,8 @@ Prasyarat Memulai :
 ```
   Terminal :
   
-  RUN  $ git clone https://github.com/admhabits/generate-wso2-apim.git
-  RUN  $ git checkout branch setup
+  RUN  $ git clone https://github.com/admhabits/wso2am-4.0.0.git
+  RUN  $ git checkout branch upload
     
 ```
 
@@ -31,7 +32,7 @@ Prasyarat Memulai :
 ```
   Terminal:
   
-  RUN $ cd apim && code .
+  RUN $ cd wso2am-4.0.0 && code .
     
 ```
 
@@ -42,4 +43,5 @@ Prasyarat Memulai :
 ARG REMOTE_NAME=<YOUR_NEW_REPO_NAME>
 ARG MY_EMAIL_GIT=<YOUR_EMAIL>
 ARG ACCESS_TOKEN=<YOUR_TOKEN_GITHUB>
+s
 ```
