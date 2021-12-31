@@ -1,7 +1,7 @@
 [server]
-hostname = "wso2am-admhabits.cloud.okteto.net"
+hostname = "localhost"
 #offset=0
-base_path = "${carbon.protocol}://${carbon.host}"
+base_path = "${carbon.protocol}://${carbon.host}:${carbon.management.port}"
 #discard_empty_caches = false
 server_role = "default"
 
@@ -108,11 +108,11 @@ auth_token = ""
 #key_validation_handler_type = "custom"
 #key_validation_handler_impl = "org.wso2.carbon.apimgt.keymgt.handlers.DefaultKeyValidationHandler"
 
-[apim.idp]
-server_url = "${carbon.protocol}://${carbon.host}"
-authorize_endpoint = "${carbon.protocol}://${carbon.host}/oauth2/authorize"
-oidc_logout_endpoint = "${carbon.protocol}://${carbon.host}/oidc/logout"
-oidc_check_session_endpoint = "${carbon.protocol}://${carbon.host}/oidc/checksession"
+#[apim.idp]
+#server_url = "https://localhost:${mgt.transport.https.port}"
+#authorize_endpoint = "https://localhost:${mgt.transport.https.port}/oauth2/authorize"
+#oidc_logout_endpoint = "https://localhost:${mgt.transport.https.port}/oidc/logout"
+#oidc_check_session_endpoint = "https://localhost:${mgt.transport.https.port}/oidc/checksession"
 
 #[apim.jwt]
 #enable = true
@@ -132,8 +132,8 @@ oidc_check_session_endpoint = "${carbon.protocol}://${carbon.host}/oidc/checkses
 #enable_token_encryption = false
 #enable_token_hashing = false
 
-[apim.devportal]
-url = "https://wso2am-admhabits.cloud.okteto.net/devportal"
+#[apim.devportal]
+#url = "https://localhost:${mgt.transport.https.port}/devportal"
 #enable_application_sharing = false
 #if application_sharing_type, application_sharing_impl both defined priority goes to application_sharing_impl
 #application_sharing_type = "default" #changed type, saml, default #todo: check the new config for rest api
