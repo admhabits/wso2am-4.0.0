@@ -48,3 +48,7 @@ endpoints:
   - path: /
     service: wso2am
     port: 9443
+  gateway:
+  - path: /
+    service: wso2am
+    port: 8243
